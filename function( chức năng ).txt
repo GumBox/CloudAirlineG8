@@ -1,0 +1,6 @@
+- Hiển thị thông tin chuyến bay (giá vé, loại vé.)
+- Đăng ký mua vé máy bay
+- Có thể thay đổi được thời gian đi.
+- Xử lý yêu cầu
+- Nhập các thông tin hành khách
+- Thanh toán online.
