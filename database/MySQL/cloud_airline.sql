@@ -231,4 +231,8 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< Updated upstream:database/MySQL/cloud_airline.sql
 -- Dump completed on 2022-08-15 12:01:41
+=======
+-- Dump completed on 2022-08-15 12:00:35
+>>>>>>> Stashed changes:database/MySQL/cloudairline.sql
