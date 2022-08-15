@@ -1,0 +1,177 @@
+.btn {
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .contact {
+        position: fixed;
+        bottom: 25%;
+        right: 1.5%;
+        width: 8.4%;
+        padding: 1%;
+        box-shadow: 0 0 5px 0px grey;
+        border: 1px solid white;
+    }
+
+    .contact:hover {
+        box-shadow: 0 0 20px 1px grey;
+
+        animation-name: animationF;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        transition: ease-in-out-3s;
+
+
+    }
+
+    .contact:active {
+        color: red;
+    }
+
+
+    @keyframes animationF {
+        0% {
+            transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+
+            transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .contact {
+        position: fixed;
+        bottom: 25%;
+        right: 1.5%;
+        width: 5.3%;
+        padding: 1%;
+        box-shadow: 0 0 5px 0px grey;
+        border: 1px solid white;
+    }
+
+    .contact:hover {
+        box-shadow: 0 0 20px 1px grey;
+
+        animation-name: animationF;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        transition: ease-in-out-3s;
+
+
+    }
+
+    .contact:active {
+        color: red;
+    }
+
+
+    @keyframes animationF {
+        0% {
+            transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+
+            transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .contact {
+        position: fixed;
+        bottom: 25%;
+        right: 1.5%;
+        width: 3.4%;
+        padding: 1%;
+        box-shadow: 0 0 5px 0px grey;
+        border: 1px solid white;
+    }
+
+    .contact:hover {
+        box-shadow: 0 0 20px 1px grey;
+
+        animation-name: animationF;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        transition: ease-in-out-3s;
+
+
+    }
+
+    .contact:active {
+        color: red;
+    }
+
+
+    @keyframes animationF {
+        0% {
+            transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+
+            transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
+
+
+
+.call-button {
+    margin-left: 25%;
+}
+
+.img-service {
+    border-radius: 0 30%;
+    box-shadow: 8px 6px 9px 2px grey
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.price {
+    text-align: right;
+    font-size: 120%;
+}
+
+.list-group-horizontal li {
+    width: 20%;
+    text-align: center;
+    font-size: 120%;
+}
