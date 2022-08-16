@@ -7,7 +7,6 @@ import certification1 from '../images/certification1.png'
 import certification from '../images/certification.png'
 
 
-
 const Footer = () => {
     return (
         <footer className=" mt-3">

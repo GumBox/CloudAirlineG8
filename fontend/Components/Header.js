@@ -5,7 +5,6 @@ import logo from '../images/Logo.png';
 
 
 
-
 export default function Header() {
 
 
@@ -25,8 +24,9 @@ export default function Header() {
                     </button>
 
                     <div class="collapse navbar-collapse" id="left-top-nav">
-                        <img src={logo} className="" width="20%"></img>
-
+                        <Link to="/">
+                            <img src={logo} className="" width="20%" />
+                        </Link>
                     </div>
 
                     <div class="collapse navbar-collapse" id="right-top-nav">
