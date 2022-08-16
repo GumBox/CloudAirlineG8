@@ -14,17 +14,27 @@ function InfomationCustomer() {
                     <ul class="nav nav-pills nav-justified bg-warning">
                         <Link to='ticket'>
                             <li class="nav-link" aria-current="page">
-                                <i class="fa-solid fa-plane-circle-check me-2"></i>
+                                <i class="fa-solid fa-plane-circle-check me-2" />
                                 <small>Xem lại chuyến bay</small>
                             </li>
                         </Link>
-                        <li className="nav-link active">
-                            <i class="fa-solid fa-person-walking-luggage me-2" ></i>
+                        <li className="nav-link active ">
+                            <i class="fa-solid fa-person-walking-luggage me-2" />
                             <small>Thông tin khách</small>
                         </li>
-                        <li className="nav-link"></li>
-                        <li className="nav-link"></li>
-                        <li className="nav-link"></li>
+                        <li className="nav-link">
+                            <i class="fa-solid fa-cart-flatbed-suitcase me-2"></i>
+                            <small>Dịch vụ hỗ trợ</small>
+                        </li>
+                        <li className="nav-link">
+                            <i class="fa-solid fa-couch me-2"></i>
+                            Chọn chỗ ngồi
+                        </li>
+                        <li className="nav-link">
+                            <i class="fa-solid fa-money-check-dollar me-2"></i>
+                            Thanh toán
+
+                        </li>
                         <li className="nav-link"><i class="fa-solid fa-cart-arrow-down"></i></li>
                         <li className="nav-link"></li>
 
@@ -129,8 +139,22 @@ function InfomationCustomer() {
                                     </div>
 
                                 </form>
+
+
                             </div>
 
+                        </div>
+                        <div className="mt-5 float-end">
+                            <Link to="">
+                                <button className="btn btn-outline-primary back-button me-4">
+                                    <i class="fa-solid fa-arrow-left-long text-black"></i>
+                                </button>
+                            </Link>
+                            <Link to="/ticket/spServices">
+                                <button className="btn btn-outline-warning back-button text-warning">
+                                    Tiếp tục
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div className=" col-md-4">
@@ -149,41 +173,112 @@ function InfomationCustomer() {
                                             SGN
                                         </button>
                                     </h2>
-                                    <div id="ticket" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#flightInf">
-                                        <div class="">
-                                            <p className="bg-warning">
-                                                <span className="text-success h6">Trở về</span>
-                                                <span className="h6"> 05:00, 22 Thg 9 2022</span>
+                                    <div id="ticket" class="accordion-collapse collapse show" aria-labelledby="headingOne" >
+                                        <div className="card-body" >
+                                            <p className="h5">
+                                                Hà Nội(HAN)
+                                                Đà Nẵng(DAD)
                                             </p>
-
-
+                                            <p>
+                                                VN 151 Airbus A321
+                                            </p>
+                                            <small style={{ opacity: .75 }}>
+                                                Hãng hàng không Cloud Airline
+                                            </small>
 
                                         </div>
+                                        <p className="bg-warning">
+                                            Trở về 08:30, 21 Thg 9 2022
+                                        </p>
+                                        <div className="card-body" >
+                                            <p className="h5">
+                                                Hà Nội(HAN)
+                                                Đà Nẵng(DAD)
+                                            </p>
+                                            <p>
+                                                VN 151 Airbus A321
+                                            </p>
+                                            <small style={{ opacity: .75 }}>
+                                                Hãng hàng không Cloud Airline
+                                            </small>
+
+                                        </div>
+                                        <p className="bg-warning ">
+                                            <p className="row">
+                                                <small className="col-md-8 my-auto">Số vé</small>
+                                                <p className="col-md-4 h5 text-success my-auto">5,396,000<sup>VND</sup></p>
+                                            </p>
+                                        </p>
+
+
                                     </div>
+                                </div>
+                                <div>
+
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Accordion Item #2
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#discount" aria-expanded="false" aria-controls="collapseTwo">
+                                            Giảm giá
                                         </button>
                                     </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#flightInf">
+                                    <div id="discount" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
                                         <div class="accordion-body">
-                                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            <div className="row">
+                                                <p className="col-md-10">
+                                                    Giảm giá
+                                                </p>
+                                                <p className="col-md-2">
+                                                    0 <sup>VND</sup>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Accordion Item #3
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#VAT" aria-expanded="false" aria-controls="collapseThree">
+                                            Thuế, phí và các khoản thu
                                         </button>
                                     </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#flightInf">
+                                    <div id="VAT" class="accordion-collapse collapse" aria-labelledby="headingThree" >
                                         <div class="accordion-body">
-                                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            <div className="row">
+                                                <div className="col-md-9">
+                                                    <small>Thuế giá trị gia tăng</small><br />
+                                                    <small>Phí soi chiếu an ninh hành khách, hành lý</small><br />
+                                                    <small>Phí dịch vụ khách hàng</small><br />
+                                                    <small>Phụ thu quản trị hệ thống</small><br />
+
+                                                </div>
+                                                <div className="col-md-3 text-center">
+                                                    <small>300,000<sup>VND</sup></small><br />
+                                                    <small>100,000<sup>VND</sup></small><br />
+                                                    <small>200,000<sup>VND</sup></small><br />
+                                                    <small>900,000<sup>VND</sup></small><br />
+
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
+                                    <hr></hr>
+                                    <div className="card-body row">
+                                        <p className="h4 col-md-6">
+                                            Tổng số tiền
+                                        </p>
+                                        <p className="h4 col-md-6 text-center">
+                                            7,250,555<sup>VND</sup>
+                                        </p>
+                                    </div>
+                                    <hr></hr>
+                                    <p className="ms-2">
+                                        Xem
+                                        <Link to="#"> Quy định về giá vé </Link>
+                                        ,
+                                        <Link to='#'>Thông tin hành lý
+                                        </Link> hiện đang áp dụng.
+                                    </p>
                                 </div>
                             </div>
 

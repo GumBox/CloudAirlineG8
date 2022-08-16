@@ -13,15 +13,29 @@ function Ticket() {
             <div className="tab-header bg-warning">
                 <div className="container">
                     <ul class="nav nav-pills nav-justified bg-warning">
-
-                        <li class="nav-link active" aria-current="page">
-                            <i class="fa-solid fa-plane-up me-2"></i>
-                            <small> Chọn chuyến bay</small>
+                        <Link to='ticket'>
+                            <li class="nav-link active" aria-current="page">
+                                <i class="fa-solid fa-plane-up me-2"></i>
+                                <small>Chọn chuyến bay</small>
+                            </li>
+                        </Link>
+                        <li className="nav-link ">
+                            <i class="fa-solid fa-person-walking-luggage me-2" />
+                            <small>Thông tin khách</small>
                         </li>
-                        <li className="nav-link"></li>
-                        <li className="nav-link"></li>
-                        <li className="nav-link"></li>
-                        <li className="nav-link"></li>
+                        <li className="nav-link">
+                            <i class="fa-solid fa-cart-flatbed-suitcase me-2"></i>
+                            <small>Dịch vụ hỗ trợ</small>
+                        </li>
+                        <li className="nav-link">
+                            <i class="fa-solid fa-couch me-2"></i>
+                            Chọn chỗ ngồi
+                        </li>
+                        <li className="nav-link">
+                            <i class="fa-solid fa-money-check-dollar me-2"></i>
+                            Thanh toán
+
+                        </li>
                         <li className="nav-link"><i class="fa-solid fa-cart-arrow-down"></i></li>
                         <li className="nav-link"></li>
 
