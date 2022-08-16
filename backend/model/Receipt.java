@@ -29,6 +29,6 @@ public class Receipt {
     @JoinColumn(name = "user_id")
     private Users users;
     
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "receipt")
-//    private Set<Ticket> lstTicket;
+    
+
 }
