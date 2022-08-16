@@ -15,7 +15,6 @@ public class Users {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
-    @Column( name = "user_id" )
     private int userID;
     
     private String fullName;
@@ -29,5 +28,6 @@ public class Users {
     private String email;
     
    
-    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+    private Set<Receipt> lstReceipt;
 }

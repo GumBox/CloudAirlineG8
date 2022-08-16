@@ -1,8 +1,3 @@
-/*
- * GumBox Inc
- * (c) 2022 GumBox Inc. Viet Nam
- *
- */
 package com.example.demo.model;
 
 import javax.persistence.Column;
@@ -12,27 +7,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-/**
- *
- * @author Blue Maxx
- */
 @Entity
+@Table( name = "ticket" )
 public class Ticket {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( name = "ticket_id")
-    private int ticketID;
-    
-    private String ticketPrice;
-    
-    private String ticketClass;
-    
-    private int seatNumber;
-    
-    @ManyToOne
-    @JoinColumn(name = "receipt_id")
-    private Receipt receiptID;
-}   
 
+    @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
+    private int ticketID;
+
+    @Column( name = "ticket_price" )
+    private String ticketPrice;
+
+    @Column( name = "ticket_class" )
+    private String ticketClass;
+
+    @Column( name = "seat_number" )
+    private int seatNumber;
+
+    @ManyToOne
+    @JoinColumn( name = "receiptid" )
+    private Receipt receipt;
+    
+}

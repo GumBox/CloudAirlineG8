@@ -1,8 +1,9 @@
 package com.example.demo.model;
 
 import java.sql.Date;
-import java.util.Set;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,18 +18,18 @@ import javax.persistence.OneToMany;
 public class Receipt {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY ) 
-    @Column (name = "receipt_id")
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private int receiptID;
-        
-    
+
     @Column( name = "receipt_buying_date" )
     private Date receiptBuyingDate;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn( name = "userid" )
     private Users users;
-    
-    
 
+    @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Ticket> lstTicket;
+    
+    
 }
