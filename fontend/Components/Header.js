@@ -24,9 +24,8 @@ export default function Header() {
                     </button>
 
                     <div class="collapse navbar-collapse" id="left-top-nav">
-                        <Link to="/">
-                            <img src={logo} className="" width="20%" />
-                        </Link>
+                        <img src={logo} className="" width="20%"></img>
+
                     </div>
 
                     <div class="collapse navbar-collapse" id="right-top-nav">

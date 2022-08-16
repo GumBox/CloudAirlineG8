@@ -43,15 +43,32 @@ function Ticket() {
                         <div id="carouselExampleControls" class="carousel slide bg-danger" >
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <td>
+                                    <span className="border">
+                                        31 Thg 08
+                                        1,477,000
+                                    </span>
 
-                                        31 Thg 8
-                                        1,400,000
-                                    </td>
-                                    <td>
-                                        31 Thg 8
-                                        1,400,000
-                                    </td>
+                                    <span>
+                                        31 Thg 08
+                                        1,477,000
+                                    </span>
+
+                                    <span>
+                                        31 Thg 08
+                                        1,477,000
+                                    </span>
+
+                                    <span>
+                                        31 Thg 08
+                                        1,477,000
+                                    </span>
+
+                                    <span>
+                                        31 Thg 08
+                                        1,477,000
+                                    </span>
+
+
                                 </div>
                                 <div class="carousel-item">
 
