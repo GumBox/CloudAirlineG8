@@ -1,4 +1,11 @@
-@Repository
-public interface ReceiptRepository extends JpaRepository<Receipt,int>{
-    Receipt findById(int receiptId);
+package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.Receipt;
+
+public interface ReceiptRepository extends JpaRepository<Receipt, Long> {
+
+    Receipt findById( int receiptId );
+
 }

@@ -1,4 +1,13 @@
+package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.Users;
+
 @Repository
-public interface UsersRepository extends JpaRepository<Users, int>{
-    Users findById(int userID);
+public interface UsersRepository extends JpaRepository<Users, Long> {
+
+    Users findById( int userID );
+
 }
