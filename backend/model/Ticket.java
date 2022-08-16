@@ -31,8 +31,8 @@ public class Ticket {
     
     private int seatNumber;
     
-//    @ManyToOne
-//    @JoinColumn(name = "receiptid")
-//    private Receipt receiptID;
+    @ManyToOne
+    @JoinColumn(name = "receipt_id")
+    private Receipt receiptID;
 }   
 

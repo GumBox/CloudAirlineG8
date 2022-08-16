@@ -28,7 +28,6 @@ public class Users {
     
     private String email;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private Set<Receipt> lstReceipt;
+   
     
 }
