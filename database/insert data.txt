@@ -1,0 +1,153 @@
+USER
+
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (1, 'Billie D''Oyley', 'Male', '4 Quincy Terrace', '830-157-8185', 'bdoyley0@odnoklassniki.ru', 1);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (2, 'Malva Abramowitch', 'Female', '08 Little Fleur Court', '216-797-6890', 'mabramowitch1@alibaba.com', 2);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (3, 'Buddie Smallshaw', 'Male', '7 Oxford Plaza', '292-420-0072', 'bsmallshaw2@vkontakte.ru', 3);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (4, 'Tobias Everil', 'Male', '0174 Loomis Pass', '684-875-4451', 'teveril3@seattletimes.com', 4);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (5, 'Herminia Hankard', 'Female', '7629 Gale Crossing', '520-194-5925', 'hhankard4@ehow.com', 5);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (6, 'Rolf Malins', 'Male', '82531 Kim Parkway', '845-693-6849', 'rmalins5@indiegogo.com', 6);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (7, 'Natassia Carvilla', 'Female', '37 Reindahl Hill', '147-319-2341', 'ncarvilla6@cyberchimps.com', 7);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (8, 'Jefferey Giametti', 'Agender', '7 Fuller Crossing', '155-601-0407', 'jgiametti7@nhs.uk', 8);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (9, 'Adler Crouch', 'Male', '35 Westport Point', '420-473-6398', 'acrouch8@pbs.org', 9);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (10, 'Rab Gouldstone', 'Male', '39664 Calypso Crossing', '935-293-0190', 'rgouldstone9@webmd.com', 10);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (11, 'Randal Rogliero', 'Male', '33035 Village Place', '778-109-0759', 'rroglieroa@imageshack.us', 11);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (12, 'Harald Hince', 'Male', '7383 Esch Terrace', '932-752-7914', 'hhinceb@facebook.com', 12);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (13, 'Stepha Borg-Bartolo', 'Female', '67436 Becker Junction', '160-179-5842', 'sborgbartoloc@homestead.com', 13);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (14, 'Rog Espada', 'Male', '5746 Hanson Trail', '288-194-1491', 'respadad@amazon.co.jp', 14);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (15, 'Beaufort Fairlamb', 'Male', '45 Drewry Plaza', '901-613-5754', 'bfairlambe@cnn.com', 15);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (16, 'Shurlocke Patifield', 'Male', '10 Little Fleur Place', '826-154-5795', 'spatifieldf@ed.gov', 16);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (17, 'Jamaal Toon', 'Male', '38486 Dennis Avenue', '647-760-2410', 'jtoong@dyndns.org', 17);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (18, 'Dania Clawe', 'Female', '57914 Delaware Parkway', '584-231-3652', 'dclaweh@bloglines.com', 18);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (19, 'Lotti Morit', 'Female', '5595 Westend Avenue', '518-150-3229', 'lmoriti@linkedin.com', 19);
+insert into users (user_id, fullname, gender, address, phone, email, receipt_id) values (20, 'Berna Reckless', 'Female', '7 Londonderry Junction', '186-206-0486', 'brecklessj@unc.edu', 20);
+
+TICKET
+
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (1, '11.08.2022', '$3151608.52', false, 99, 1, 1, 1, 1);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (2, '31.05.2022', '$2557618.96', true, 42, 2, 2, 2, 2);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (3, '06.03.2022', '$1591818.50', true, 70, 3, 3, 3, 3);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (4, '25.06.2022', '$2690932.12', true, 34, 4, 4, 4, 4);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (5, '01.05.2022', '$2446702.22', true, 8, 5, 5, 5, 5);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (6, '03.06.2022', '$2634495.57', false, 41, 6, 6, 6, 6);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (7, '28.05.2022', '$4786052.41', true, 57, 7, 7, 7, 7);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (8, '17.04.2022', '$3288245.43', true, 13, 8, 8, 8, 8);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (9, '28.06.2022', '$807028.62', false, 46, 9, 9, 9, 9);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (10, '21.09.2021', '$2065872.80', true, 82, 10, 10, 10, 10);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (11, '22.07.2022', '$3128856.59', false, 31, 11, 11, 11, 11);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (12, '04.01.2022', '$4990830.47', true, 32, 12, 12, 12, 12);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (13, '04.04.2022', '$1097927.12', false, 42, 13, 13, 13, 13);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (14, '15.04.2022', '$3867794.58', true, 38, 14, 14, 14, 14);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (15, '16.04.2022', '$3367646.60', false, 32, 15, 15, 15, 15);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (16, '20.02.2022', '$1277756.90', false, 3, 16, 16, 16, 16);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (17, '03.07.2022', '$997095.29', true, 82, 17, 17, 17, 17);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (18, '07.05.2022', '$3955818.92', false, 90, 18, 18, 18, 18);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (19, '07.08.2022', '$1552094.12', false, 72, 19, 19, 19, 19);
+insert into ticket (ticket_id, ticket_buying_date, ticket_price, class, seat_number, place_id, plane_id, customer_id, receipt_id) values (20, '28.07.2022', '$3545599.46', true, 6, 20, 20, 20, 20);
+RECEIPT
+insert into receipt (receipt_id, receipt_buying_date) values (1, '5/11/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (2, '7/9/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (3, '9/22/2021');
+insert into receipt (receipt_id, receipt_buying_date) values (4, '8/13/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (5, '6/28/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (6, '12/17/2021');
+insert into receipt (receipt_id, receipt_buying_date) values (7, '3/19/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (8, '6/12/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (9, '6/7/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (10, '4/16/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (11, '12/1/2021');
+insert into receipt (receipt_id, receipt_buying_date) values (12, '8/14/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (13, '4/2/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (14, '4/27/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (15, '12/28/2021');
+insert into receipt (receipt_id, receipt_buying_date) values (16, '11/18/2021');
+insert into receipt (receipt_id, receipt_buying_date) values (17, '12/23/2021');
+insert into receipt (receipt_id, receipt_buying_date) values (18, '9/5/2021');
+insert into receipt (receipt_id, receipt_buying_date) values (19, '8/7/2022');
+insert into receipt (receipt_id, receipt_buying_date) values (20, '12/8/2021');
+
+PLANE
+
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (1, 'Promethazine Hydrochloride', '6/14/2022', 4);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (2, 'Maximum Strength Original Diaper Rash', '1/3/2022', 26);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (3, 'Allergen', '2/22/2022', 37);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (4, 'Clonidine Hydrochloride', '11/29/2021', 71);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (5, 'Finasteride', '4/11/2022', 29);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (6, 'Polyethylene Glycol-3350, Sodium Chloride, Potassium Chloride and Sodium Bicarbonate', '4/17/2022', 100);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (7, 'Levetiracetam', '5/21/2022', 95);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (8, 'Risperidone', '7/24/2022', 6);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (9, 'Lotrel', '6/30/2022', 27);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (10, 'Felodipine', '12/24/2021', 93);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (11, 'Etodolac', '11/25/2021', 24);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (12, 'Golden Medium Foundation SPF 15', '11/25/2021', 2);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (13, 'Omeprazole Magnesium', '11/22/2021', 96);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (14, 'Pioglitazone Hydrochloride and Metformin Hydrochloride', '9/29/2021', 92);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (15, 'Felodipine', '7/5/2022', 27);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (16, 'Famciclovir', '1/12/2022', 85);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (17, 'Axe', '10/25/2021', 19);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (18, 'Boudreauxs', '4/22/2022', 87);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (19, 'Pravastatin Sodium', '6/11/2022', 62);
+insert into plane (plane_id, plane_brand, plane_code, total_seat) values (20, 'Jantoven', '3/20/2022', 33);
+
+PLACE
+
+insert into place (place_id, place_name, airport_name) values ('VCS','Bà Rịa - Vũng Tàu','Sân bay Côn Đảo');
+insert into place (place_id, place_name, airport_name) values ('SQH','Sơn La','Sân bay Nà Sản');
+insert into place (place_id, place_name, airport_name) values ('UIH','Bình Định','Sân bay Phú Cát - Bình Định');
+insert into place (place_id, place_name, airport_name) values ('CAH','Cà Mau','Sân bay Cà Mau');
+insert into place (place_id, place_name, airport_name) values ('BMV','Đắk Lắk','Sân bay Buôn Ma Thuột');
+insert into place (place_id, place_name, airport_name) values ('DIN','Điện Biên','Sân bay Điện Biên Phủ');
+insert into place (place_id, place_name, airport_name) values ('PXU','Gia Lai','Sân bay Pleiku - Gia Lai');
+insert into place (place_id, place_name, airport_name) values ('VKG','Kiên Giang','Sân bay Rạch Giá - Kiên Giang');
+insert into place (place_id, place_name, airport_name) values ('DLI','Lâm Đồng','Sân bay Liên Khương - Đà Lạt');
+insert into place (place_id, place_name, airport_name) values ('TBB','Phú Yên','Sân bay Tuy Hòa - Phú Yên');
+insert into place (place_id, place_name, airport_name) values ('VDH','Quảng Bình','Sân bay Đồng Hới - Quảng Bình');
+insert into place (place_id, place_name, airport_name) values ('VCL','Quảng Nam','Sân bay Chu Lai - Quảng Nam');
+insert into place (place_id, place_name, airport_name) values ('THD','Thanh Hóa',' Sân bay Thọ Xuân - Thanh Hóa');
+insert into place (place_id, place_name, airport_name) values ('HAN','Hà Nội',' Sân bay Nội Bài');
+insert into place (place_id, place_name, airport_name) values ('SGN','Thành phố Hồ Chí Minh',' Sân bay Tân Sơn Nhất');
+
+CUSTOMER
+
+insert into customer (customer_id, fullname, gender, address, phone, email) values (1, 'Baryram Forri', 'Male', '87 Carberry Road', '444 960 6230', 'bforri0@mapquest.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (2, 'Dewain Boot', 'Male', '7261 Sage Parkway', '522 885 3560', 'dboot1@1688.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (3, 'Dolores Deackes', 'Female', '354 Amoth Parkway', '666 854 5921', 'ddeackes2@webs.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (4, 'Arline Simonou', 'Female', '48 Carpenter Pass', '988 501 5147', 'asimonou3@sakura.ne.jp');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (5, 'Ketti Raise', 'Female', '6551 Derek Terrace', '100 689 9578', 'kraise4@histats.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (6, 'Chandra McEvilly', 'Female', '67914 Forest Run Road', '319 938 3421', 'cmcevilly5@facebook.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (7, 'Alfy O''Finan', 'Female', '9769 Forster Street', '652 639 3314', 'aofinan6@independent.co.uk');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (8, 'Alonzo Horrod', 'Male', '6547 Barby Crossing', '339 380 9174', 'ahorrod7@uol.com.br');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (9, 'Giuseppe Pele', 'Male', '864 Corry Pass', '776 504 8309', 'gpele8@wunderground.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (10, 'Lou Bleby', 'Male', '839 Scoville Drive', '451 434 9277', 'lbleby9@hao123.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (11, 'Blondell Ford', 'Female', '962 Hansons Point', '370 443 1925', 'bforda@mediafire.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (12, 'Vivyanne Rittmeyer', 'Female', '9 Debra Avenue', '831 823 3150', 'vrittmeyerb@pinterest.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (13, 'Artus Gunderson', 'Male', '567 3rd Alley', '534 514 8949', 'agundersonc@ed.gov');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (14, 'Farly Vigurs', 'Male', '8670 Jana Park', '763 495 3574', 'fvigursd@hao123.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (15, 'Zebadiah Greenroad', 'Male', '8503 Continental Lane', '550 844 5475', 'zgreenroade@salon.com');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (16, 'Karim Darkott', 'Male', '34774 Prairieview Hill', '212 260 5434', 'kdarkottf@google.it');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (17, 'Dorena Nijssen', 'Female', '63369 Burrows Road', '571 995 2146', 'dnijsseng@jalbum.net');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (18, 'Leia Tubby', 'Female', '2434 Vernon Trail', '813 241 7812', 'ltubbyh@amazon.co.jp');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (19, 'Noe Guarin', 'Genderqueer', '01377 Lakeland Parkway', '251 600 9278', 'nguarini@miitbeian.gov.cn');
+insert into customer (customer_id, fullname, gender, address, phone, email) values (20, 'Madella Fishley', 'Female', '5277 Lillian Way', '456 361 6764', 'mfishleyj@tripod.com');
+
+FLIGHT
+
+insert into flight (flight_id, plane_id, time) values (1, 1, '01/03/2022');
+insert into flight (flight_id, plane_id, time) values (2, 2, '02/05/2022');
+insert into flight (flight_id, plane_id, time) values (3, 3, '23/09/2021');
+insert into flight (flight_id, plane_id, time) values (4, 4, '03/10/2021');
+insert into flight (flight_id, plane_id, time) values (5, 5, '02/10/2021');
+insert into flight (flight_id, plane_id, time) values (6, 6, '30/12/2021');
+insert into flight (flight_id, plane_id, time) values (7, 7, '19/12/2021');
+insert into flight (flight_id, plane_id, time) values (8, 8, '30/04/2022');
+insert into flight (flight_id, plane_id, time) values (9, 9, '10/05/2022');
+insert into flight (flight_id, plane_id, time) values (10, 10, '26/04/2022');
+insert into flight (flight_id, plane_id, time) values (11, 11, '05/08/2022');
+insert into flight (flight_id, plane_id, time) values (12, 12, '12/09/2021');
+insert into flight (flight_id, plane_id, time) values (13, 13, '18/11/2021');
+insert into flight (flight_id, plane_id, time) values (14, 14, '26/08/2021');
+insert into flight (flight_id, plane_id, time) values (15, 15, '04/12/2021');
+insert into flight (flight_id, plane_id, time) values (16, 16, '27/10/2021');
+insert into flight (flight_id, plane_id, time) values (17, 17, '05/02/2022');
+insert into flight (flight_id, plane_id, time) values (18, 18, '22/12/2021');
+insert into flight (flight_id, plane_id, time) values (19, 19, '10/01/2022');
+insert into flight (flight_id, plane_id, time) values (20, 20, '04/06/2022');
