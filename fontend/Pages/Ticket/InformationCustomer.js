@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../../Css/InfomationCustomer.css';
 
 
 
@@ -12,7 +13,7 @@ function InfomationCustomer() {
             <div className="tab-header bg-warning">
                 <div className="container">
                     <ul class="nav nav-pills nav-justified bg-warning">
-                        <Link to='ticket'>
+                        <Link to='/ticket/'>
                             <li class="nav-link" aria-current="page">
                                 <i class="fa-solid fa-plane-circle-check me-2" />
                                 <small>Xem lại chuyến bay</small>
@@ -43,7 +44,7 @@ function InfomationCustomer() {
             </div>
 
             <div className="container mt-4">
-                <div className="card">
+                <div className="card" id="oke">
                     <p className="card-body">
                         Dữ liệu cá nhân của Quý khách thu thập trên trang này được xử lý và lưu trữ bởi Cloud Airline cho mục đích và theo điều kiện đã được công bố tại Chính sách bảo mật thông tin của Cloud Airlines.<br />
                         Để tìm hiểu thêm về việc cách thức xử lý dữ liệu cá nhân của Quý khách và về các quyền của Quý khách (Quyền yêu cầu cung cấp thông tin, Quyền sửa đổi thông tin…), vui lòng đọc và chấp nhận
@@ -63,7 +64,7 @@ function InfomationCustomer() {
 
                 <div className="row">
                     <div className="col-md-8">
-                        <div className="card ">
+                        <div className="card " id="oke">
                             <div className="card-header">
                                 Hành Khách
                             </div>
@@ -78,23 +79,27 @@ function InfomationCustomer() {
                                         Thông tin cơ bản
                                     </p>
                                     <div class="form-floating mb-3 col-sm-12 col-md-2">
-                                        <input type="text" class="form-control" id="nickName" placeholder="Danh xưng" />
+                                        <select class="form-select" id="nickName" placeholder="Danh xưng">
+                                            <option value="0">Anh/Chị</option>
+                                            <option value="1">Cô/Chú</option>
+                                            <option value="2">Ông/Bà</option>
+                                        </select>
                                         <label className="ms-2" for="nickName" style={{ opacity: .75 }}>Danh xưng *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-5">
-                                        <input type="text" class="form-control" id="lastName" placeholder="Tên Đệm và Tên" />
+                                        <input type="text" class="form-control" id="lastName" placeholder="Tên Đệm và Tên" required />
                                         <label className="ms-2" for="lastName" style={{ opacity: .75 }}>Tên Đệm và Tên *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-5">
-                                        <input type="text" class="form-control" id="firstName" placeholder="Họ" />
+                                        <input type="text" class="form-control" id="firstName" placeholder="Họ" required />
                                         <label className="ms-2" for="firstName" style={{ opacity: .75 }}>Họ *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6">
-                                        <input type="text" class="form-control" id="dob" placeholder="Giới tính" />
+                                        <input type="text" class="form-control" id="dob" placeholder="Giới tính" required />
                                         <label className="ms-2" for="dob" style={{ opacity: .75 }}>Ngày Tháng Năm sinh *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6">
-                                        <input type="text" class="form-control" id="sex" placeholder="Giới tính" />
+                                        <input type="text" class="form-control" id="sex" placeholder="Giới tính" required />
                                         <label className="ms-2" for="sex" style={{ opacity: .75 }}>Giới tính *</label>
                                     </div>
                                     <div class="form-check mt-2 ms-3">
@@ -111,23 +116,23 @@ function InfomationCustomer() {
                                     </p>
 
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="numberPhone" placeholder="Sos điện thoại " />
+                                        <input type="text" class="form-control" id="numberPhone" placeholder="Sos điện thoại " required />
                                         <label className="ms-2" for="numberPhone" style={{ opacity: .75 }}>Số điện thoại *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="numberPhone" placeholder="Sos điện thoại " />
+                                        <input type="text" class="form-control" id="numberPhone" placeholder="Sos điện thoại " required />
                                         <label className="ms-2" for="numberPhone" style={{ opacity: .75 }}>Số điện thoại 2 </label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Email " />
+                                        <input type="email" class="form-control" id="email" placeholder="Email " required />
                                         <label className="ms-2" for="email" style={{ opacity: .75 }}>Email *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Email " />
+                                        <input type="email" class="form-control" id="email" placeholder="Email " required />
                                         <label className="ms-2" for="email" style={{ opacity: .75 }}>Email </label>
                                     </div>
                                     <div class="form-check ">
-                                        <input class="form-check-input" type="checkbox" value="" id="ckeck" />
+                                        <input class="form-check-input" type="checkbox" value="" id="ckeck" required />
                                         <label class="form-check-label" for="check">
                                             <small>
                                                 Tôi đồng ý nhận các thông ti quảng cáo qua email được nêu chi tiết trong
@@ -137,6 +142,9 @@ function InfomationCustomer() {
                                             </small>
                                         </label>
                                     </div>
+                                    <div className="mt-3 ">
+                                        <input type="submit" value="Hoàn thành" className="float-end btn btn-danger"></input>
+                                    </div>
 
                                 </form>
 
@@ -144,21 +152,19 @@ function InfomationCustomer() {
                             </div>
 
                         </div>
-                        <div className="mt-5 float-end">
+                        <div className="col-md-12 mt-5 text-end">
                             <Link to="">
                                 <button className="btn btn-outline-primary back-button me-4">
                                     <i class="fa-solid fa-arrow-left-long text-black"></i>
                                 </button>
                             </Link>
                             <Link to="/ticket/spServices">
-                                <button className="btn btn-outline-warning back-button text-warning">
-                                    Tiếp tục
-                                </button>
+                                <input type="submit" className="btn btn-outline-warning next-button text-warning " value="Tiếp tục" />
                             </Link>
                         </div>
                     </div>
                     <div className=" col-md-4">
-                        <div className="card">
+                        <div className="card" id="oke">
                             <div className="card-header">
                                 Chi tiết chuyến bay
                             </div>

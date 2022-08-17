@@ -1,18 +1,19 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
-
+import "../../Css/Tickets.css";
 
 
 function Ticket() {
 
 
+
     return (
         <>
             {/* HEADER & CAROUSEL */}
-            <div className="tab-header bg-warning">
+            <div className="tab-header">
+
                 <div className="container">
-                    <ul class="nav nav-pills nav-justified bg-warning">
+                    <ul class="nav nav-pills nav-justified ">
                         <Link to='ticket'>
                             <li class="nav-link active" aria-current="page">
                                 <i class="fa-solid fa-plane-up me-2"></i>
@@ -21,7 +22,7 @@ function Ticket() {
                         </Link>
                         <li className="nav-link ">
                             <i class="fa-solid fa-person-walking-luggage me-2" />
-                            <small>Thông tin khách</small>
+                            <small>Thông tin khách </small>
                         </li>
                         <li className="nav-link">
                             <i class="fa-solid fa-cart-flatbed-suitcase me-2"></i>
@@ -46,7 +47,7 @@ function Ticket() {
 
             <div className="container">
                 <div className="row">
-                    <p className="h4 mt-4">
+                    <p className="h4 mt-4 title-header-flight">
                         Chọn chuyến bay
                     </p>
                     <p>
@@ -67,9 +68,13 @@ function Ticket() {
                             Đồng tiền thanh toán hiển thị theo "Quốc gia/Vùng" đã chọn, Quý khách kiểm tra kỹ đồng tiền trước khi thanh toán
                         </p>
                     </div>
+
+                    <p className="h4 my-4 title-header-flight">
+                        Chuyến bay chiều đi
+                    </p>
                     <div>
-                        <div id="carouselExampleControls" class="carousel slide bg-danger" >
-                            <div class="carousel-inner">
+                        <div id="flightDate" class="carousel slide  " >
+                            <div class="carousel-inner bg-danger ">
                                 <div class="carousel-item active">
 
                                     <button type="button" className="col-md-1 date-flight">
@@ -334,11 +339,11 @@ function Ticket() {
                                     </button>
                                 </div>
                             </div>
-                            <button class="carousel-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <button class="carousel-prev" type="button" data-bs-target="#flightDate" data-bs-slide="prev">
                                 <span class="carousel-button-prev" ><i class="fa-solid fa-chevron-left"></i></span>
 
                             </button>
-                            <button class="carousel-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <button class="carousel-next float-end " type="button" data-bs-target="#flightDate" data-bs-slide="next">
                                 <span className="carousel-button-next" ><i class="fa-solid fa-chevron-right"></i></span>
 
                             </button>
@@ -353,17 +358,17 @@ function Ticket() {
                                 20 kết quả
                             </p>
                             <p className="col-sm-12 col-md-3">
-                                <button className="common">
+                                <button className="common h5 text-white">
                                     PHỔ THÔNG
                                 </button>
                             </p>
                             <p className="col-sm-12 col-md-3">
-                                <button className="trader">
+                                <button className="trader h5 ">
                                     THƯƠNG GIA
                                 </button>
                             </p>
                         </div>
-                        <div className="row card-title bg-secondary">
+                        <div className="row card-title ">
                             <small className="col-sm-12 col-md-8">
                                 THỜI GIAN
                             </small>
@@ -397,30 +402,35 @@ function Ticket() {
                                                     </button>
                                                 </Link>
                                             </p>
-                                            <table className="table table-hover">
-                                                <tbody>
-                                                    <tr>
-                                                        <td scope="row">Hành Lý Xách Tay</td>
-                                                        <td>:17kg</td>
+                                            <p className="text-center" data-bs-toggle="collapse" href="#show-table-common" aria-expanded="false" >
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </p>
+                                            <div className="collapse" id="show-table-common">
+                                                <table className="table table-hover " >
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="row">Hành Lý Xách Tay</td>
+                                                            <td>:17kg</td>
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Hành Lý Kí Gửi</td>
-                                                        <td>:23kg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Hành Lý Kí Gửi</td>
+                                                            <td>:23kg</td>
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Hoàn Vé</td>
-                                                        <td>:Không áp dụng</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Hoàn Vé</td>
+                                                            <td>:Không áp dụng</td>
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Đổi Vé</td>
-                                                        <td>:Miễn phí</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Đổi Vé</td>
+                                                            <td>:Miễn phí</td>
 
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -429,7 +439,7 @@ function Ticket() {
                                     <div className="card">
                                         <div class="card-header">
                                             <p className="text-center h4">
-                                                PHỔ THÔNG
+                                                THƯƠNG GIA
                                             </p>
                                         </div>
                                         <div class=" card-body">
@@ -440,30 +450,36 @@ function Ticket() {
                                                     </button>
                                                 </Link>
                                             </p>
-                                            <table className="table table-hover">
-                                                <tbody>
-                                                    <tr>
-                                                        <td scope="row">Hành Lý Xách Tay</td>
-                                                        <td>:17kg</td>
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Hành Lý Kí Gửi</td>
-                                                        <td>:23kg</td>
+                                            <p className="text-center" data-bs-toggle="collapse" href="#show-table-trader" aria-expanded="false" >
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </p>
+                                            <div className="collapse" id="show-table-trader">
+                                                <table className="table table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="row">Hành Lý Xách Tay</td>
+                                                            <td>:17kg</td>
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Hoàn Vé</td>
-                                                        <td>:Không áp dụng</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Hành Lý Kí Gửi</td>
+                                                            <td>:23kg</td>
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Đổi Vé</td>
-                                                        <td>:Miễn phí</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Hoàn Vé</td>
+                                                            <td>:Không áp dụng</td>
 
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Đổi Vé</td>
+                                                            <td>:Miễn phí</td>
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
