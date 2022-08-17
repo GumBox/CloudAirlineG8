@@ -7,7 +7,6 @@ import certification1 from '../images/certification1.png'
 import certification from '../images/certification.png'
 
 
-
 const Footer = () => {
     return (
         <footer className=" mt-3">
@@ -15,8 +14,8 @@ const Footer = () => {
 
                 <img src={logo} alt=".." className='logo-footer col-md-3 '>
                 </img>
-                <p className='col-md-9 mt-3'>
-                    <p className='h4 text-primary'>Cloud Airline</p>
+                <p className='col-md-9 my-auto'>
+                    <p className='h4 text-primary '>Cloud Airline</p>
 
                     <span className='h6 '>Xin trân trọng cảm ơn sự đồng hành của quý khách hàng</span>
                 </p>

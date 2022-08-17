@@ -14,8 +14,6 @@ import { Link } from "react-router-dom";
 
 
 
-
-
 function Home() {
 
     return (
@@ -361,7 +359,9 @@ function Home() {
                                             Số lượng hành khách
                                             <input type="number" className="form-control" placeholder="1" />
                                         </p>
-                                        <span class="badge rounded-pill bg-primary opacity-75 d-inline-flex">Vé của bạn</span>
+                                        <p className="row">
+                                            <span class="badge rounded-pill bg-primary opacity-75 col-md-1">Vé của bạn</span>
+                                        </p>
                                         <p className="col-sm-12 col-md-2  ">
                                             Loại vé
                                             <select name="ticketType" className="form-control"  >
@@ -444,7 +444,7 @@ function Home() {
                                             </span>
                                         </p>
                                         <p>
-                                            <input type="checkbox" name="" className="form-check-input me-2" />Tôi đồng ý
+                                            <input type="checkbox" name="" className="form-check-input me-2" required />Tôi đồng ý
                                         </p>
                                         <input type="submit" value="Tìm chuyến bay" className="btn btn-warning col-md-2" />
                                     </form>
@@ -459,15 +459,15 @@ function Home() {
                                     <form className="row card-body">
                                         <p className="col-sm-12 col-md-3">
                                             Họ tên:
-                                            <input type="text" className="form-control" name="" placeholder="Họ tên" />
+                                            <input type="text" className="form-control" name="" placeholder="Họ tên" required />
                                         </p>
                                         <p className="col-sm-12 col-md-3">
                                             Số điện thoại:
-                                            <input type="text" className="form-control" name="" placeholder="Số điện thoại" />
+                                            <input type="text" className="form-control" name="" placeholder="Số điện thoại" required />
                                         </p>
                                         <p className="col-sm-12 col-md-3">
                                             Email:
-                                            <input type="email" className="form-control" name="" placeholder="Email" />
+                                            <input type="email" className="form-control" name="" placeholder="Email" required />
                                         </p>
                                         <p className="col-sm-12 col-md-3">
                                             <input type="submit" className="btn btn-warning mt-4" name="" />
