@@ -9,7 +9,7 @@ import certification from '../images/certification.png'
 
 const Footer = () => {
     return (
-        <footer className=" mt-3">
+        <footer className=" mt-3" id="top">
             <div className='row footter-header '>
 
                 <img src={logo} alt=".." className='logo-footer col-md-3 '>
@@ -31,18 +31,16 @@ const Footer = () => {
 
 
                             <li className="menu-item-title h4 ">Cloud Airline</li>
-                            <li className="menu-item"><Link to='products'>Giới Thiệu Công Ty </Link></li>
-                            <li className="menu-item"><Link to='products'>Đội Bay </Link></li>
-                            <li className="menu-item"><Link to='products'>Đối Tác </Link></li>
-                            <li className="menu-item"><Link to='products'>Thông Tin Truyền Thông </Link></li>
-                            <li className="menu-item"><Link to='products'>Việc Làm Với Cloud Airline </Link></li>
+                            <li className="menu-item" ><Link to='company'>Giới Thiệu Công Ty </Link></li>
+                            <li className="menu-item" ><Link to='plane'>Đội Bay </Link></li>
+                            <li className="menu-item" ><Link to='partner'>Đối Tác </Link></li>
                         </div>
                         <div className="col-md-3 col-sm-6">
 
                             <li className="menu-item-title h4 ">Pháp Lý</li>
-                            <li className="menu-item"><Link to='testdrive'>Các Điều Khoản & Điều Kiện </Link></li>
-                            <li className="menu-item"><Link to='products'>Diều Lệ Vận Chuyển</Link></li>
-                            <li className="menu-item"><Link to='service'>Bảo Mật Thông Tin </Link></li>
+                            <li className="menu-item"><Link to='termsandcondition'>Các Điều Khoản & Điều Kiện </Link></li>
+                            <li className="menu-item"><Link to='products'>Điều Lệ Vận Chuyển</Link></li>
+                            <li className="menu-item"><Link to='protectinf'>Bảo Mật Thông Tin </Link></li>
                         </div>
                         <div className="col-md-3 col-sm-6">
 
