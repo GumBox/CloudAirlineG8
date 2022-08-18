@@ -13,7 +13,5 @@ public interface UserService {
 
     List<Ticket> getAllTicket();
 
-    Page<Receipt> findPaginated( int pageNo, int pageSize, String sortField,
-                    String sortDirection );
-
+   
 }

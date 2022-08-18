@@ -15,12 +15,6 @@ public class UserServiceImp implements UserService {
     @Override
     public List<Ticket> getAllTicket() { return null; }
 
-    @Override
-    public Page<Receipt> findPaginated( int pageNo, int pageSize, String sortField,
-                    String sortDirection ) {
-
-        return null;
-
-    }
+    
 
 }
