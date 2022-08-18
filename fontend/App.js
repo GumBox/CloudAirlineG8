@@ -6,6 +6,11 @@ import Ticket from "./Pages/Ticket/Ticket";
 import InfomationCustomer from "./Pages/Ticket/InformationCustomer";
 import SupportServices from "./Pages/Ticket/SupportServices";
 import Seat from "./Pages/Ticket/Seat";
+import Company from "./Pages/Introduce/Company";
+import Plane from "./Pages/Introduce/Plane";
+import Partner from "./Pages/Introduce/Partner"
+import TermsAndCondition from "./Pages/Rule/TermsAndCondition"
+import ProtectInf from "./Pages/Rule/ProtectInf";
 
 
 function App() {
@@ -19,6 +24,11 @@ function App() {
           <Route path="/ticket/infcustomer" element={< InfomationCustomer />} />
           <Route path="/ticket/spServices" element={< SupportServices />} />
           <Route path="/ticket/seat" element={< Seat />} />
+          <Route path="company" element={< Company />} />
+          <Route path="plane" element={< Plane />} />
+          <Route path="partner" element={< Partner />} />
+          <Route path="termsandcondition" element={< TermsAndCondition />} />
+          <Route path="protectinf" element={< ProtectInf />} />
         </Route>
       </Routes>
     </BrowserRouter>
