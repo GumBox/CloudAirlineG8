@@ -17,7 +17,7 @@ public class Ticket {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "ticket_id" )
-    private int ticketID;
+    private long ticketID;
 
     @Column( name = "ticket_price" )
     private String ticketPrice;
@@ -27,9 +27,9 @@ public class Ticket {
 
     @Column( name = "seat_number" )
     private int seatNumber;
-    
+
     @ManyToOne( fetch = FetchType.LAZY )
-    @JoinColumn( name = "flight_id")
+    @JoinColumn( name = "flight_id" )
     private Flight flight;
 
     @ManyToOne

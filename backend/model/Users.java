@@ -16,7 +16,7 @@ public class Users {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "user_id" )
-    private int userID;
+    private long userID;
 
     @Column( name = "full_name" )
     private String fullName;
@@ -25,17 +25,20 @@ public class Users {
 
     private String address;
 
-    private int phone;
+    private long phone;
 
     private String email;
 
     @OneToMany( fetch = FetchType.LAZY, mappedBy = "users" )
     private Set<Receipt> lstReceipt;
 
-    public Users() { super();
-     }
+    public Users() {
 
-    public Users(String fullName, boolean gender, String address, int phone,
+        super();
+
+    }
+
+    public Users(String fullName, boolean gender, String address, long phone,
                     String email) {
 
         super();
@@ -50,7 +53,7 @@ public class Users {
     /**
      * @return the userID
      */
-    public int getUserID() { return userID; }
+    public long getUserID() { return userID; }
 
     /**
      * @return the fullName
@@ -85,7 +88,7 @@ public class Users {
     /**
      * @return the phone
      */
-    public int getPhone() { return phone; }
+    public long getPhone() { return phone; }
 
     /**
      * @param phone the phone to set
