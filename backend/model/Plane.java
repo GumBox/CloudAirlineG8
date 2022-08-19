@@ -19,7 +19,7 @@ public class Plane {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "plane_id" )
-    private int planeID;
+    private long planeID;
 
     @Column( name = "plane_brand" )
     private String planeBrand;

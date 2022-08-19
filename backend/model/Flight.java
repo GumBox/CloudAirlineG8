@@ -21,7 +21,7 @@ public class Flight {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "flight_id" )
-    private int flightID;
+    private long flightID;
 
     @Column( name = "time_from" )
     private Time timeFrom;

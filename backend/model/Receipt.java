@@ -20,7 +20,7 @@ public class Receipt {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "receipt_id" )
-    private int receiptID;
+    private long receiptID;
 
     @Column( name = "receipt_buying_date" )
     private Date receiptBuyingDate;
@@ -32,9 +32,11 @@ public class Receipt {
     @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL )
     private List<Ticket> lstTicket;
 
-    
-    public Receipt() { super();
-     }
+    public Receipt() {
+
+        super();
+
+    }
 
     public Receipt(Date receiptBuyingDate, Users users) {
 
@@ -47,7 +49,7 @@ public class Receipt {
     /**
      * @return the receiptID
      */
-    public int getReceiptID() { return receiptID; }
+    public long getReceiptID() { return receiptID; }
 
     /**
      * @return the receiptBuyingDate
