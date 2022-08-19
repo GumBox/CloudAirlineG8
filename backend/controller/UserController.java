@@ -24,15 +24,17 @@ public class UserController {
     public List<Users> getAllUser() {
 
         return userRepository.findAll();
-        // return userRepository.findAll();
 
     }
-    
-    @GetMapping("/user/{id}")
-    public ResponseEntity < Users > getUsersById(@PathVariable Long id) {
-        Users muse = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
+
+    @GetMapping( "/user/{id}" )
+    public ResponseEntity<Users> getUsersById( @PathVariable Long id ) {
+        
+        Users muse = userRepository.findById(id)
+                        .orElseThrow(() -> new ResourceNotFoundException(
+                                        "Employee not exist with id :" + id));
         return ResponseEntity.ok(muse);
+
     }
-    
 
 }
