@@ -15,6 +15,4 @@ public class UserServiceImp implements UserService {
     @Override
     public List<Ticket> getAllTicket() { return null; }
 
-    
-
 }

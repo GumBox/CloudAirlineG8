@@ -29,7 +29,7 @@ public class UserController {
 
     @GetMapping( "/user/{id}" )
     public ResponseEntity<Users> getUsersById( @PathVariable Long id ) {
-        
+
         Users muse = userRepository.findById(id)
                         .orElseThrow(() -> new ResourceNotFoundException(
                                         "Employee not exist with id :" + id));

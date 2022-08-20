@@ -25,7 +25,7 @@ public class Users {
 
     private String address;
 
-    private long phone;
+    private String phone;
 
     private String email;
 
@@ -38,7 +38,7 @@ public class Users {
 
     }
 
-    public Users(String fullName, boolean gender, String address, long phone,
+    public Users(String fullName, boolean gender, String address, String phone,
                     String email) {
 
         super();
@@ -88,12 +88,12 @@ public class Users {
     /**
      * @return the phone
      */
-    public long getPhone() { return phone; }
+    public String getPhone() { return phone; }
 
     /**
      * @param phone the phone to set
      */
-    public void setPhone( int phone ) { this.phone = phone; }
+    public void setPhone( String phone ) { this.phone = phone; }
 
     /**
      * @return the email
