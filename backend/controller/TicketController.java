@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Ticket;
 import com.example.demo.repository.TicketRepository;
 
@@ -26,10 +27,14 @@ public class TicketController {
 
     }
 
-    @GetMapping("/ticket/{id}")
-    public Ticket findTicketById(@PathVariable long id ) {
+    @GetMapping( "/ticket/{id}" )
+    public Ticket findTicketById( @PathVariable long id ) {
 
-        return null;
+        Ticket ticket = ticketRepository.findById(id)
+                        .orElseThrow(() -> new ResourceNotFoundException(
+                                        "Can't Found ID: " + id));
+
+        return ticket;
 
     }
 

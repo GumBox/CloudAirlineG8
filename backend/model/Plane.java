@@ -27,7 +27,7 @@ public class Plane {
     @Column( name = "plane_code" )
     private String planeCode;
 
-    @Column( name = "plane_seat" )
+    @Column( name = "total_seat" )
     private int totalSeat;
 
     @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL )
