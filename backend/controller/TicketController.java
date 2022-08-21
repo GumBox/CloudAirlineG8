@@ -13,6 +13,10 @@ import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Ticket;
 import com.example.demo.repository.TicketRepository;
 
+/*
+ * https://springframework.guru/exception-handling-in-spring-boot-rest-api/
+ */
+
 @RestController
 @RequestMapping( "/mainticket/" )
 public class TicketController {
@@ -38,4 +42,10 @@ public class TicketController {
 
     }
 
+    /*
+     * Change time flight ticket 
+     * @PostMapping is short of @RequestMapping 
+     */
+    @PostMapping( "/ticket/change/{id}")
+    public 
 }
