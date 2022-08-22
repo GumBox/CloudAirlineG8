@@ -12,7 +12,7 @@ insert into users (user_id, full_name, gender, address, phone, email) values (11
 insert into users (user_id, full_name, gender, address, phone, email) values (12, 'Asher Banbrook', 0, '3 Leroy Parkway', '0242849348', 'abanbrookb@ustream.tv');
 insert into users (user_id, full_name, gender, address, phone, email) values (13, 'Thoma O''Cosgra', 0, '738 Burrows Pass', '0157684723', 'tocosgrac@ucoz.ru');
 insert into users (user_id, full_name, gender, address, phone, email) values (14, 'Kinnie Campa', 0, '19281 Namekagon Parkway', '025708-3116', 'kcampad@freewebs.com');
-insert into users (user_id, full_name, gender, address, phone, email) values (15, 'Cicely Jamblin', 'Polygender', '2460 Darwin Lane', '0772850743', 'cjambline@github.com');
+insert into users (user_id, full_name, gender, address, phone, email) values (15, 'Cicely Jamblin', 1, '2460 Darwin Lane', '0772850743', 'cjambline@github.com');
 insert into users (user_id, full_name, gender, address, phone, email) values (16, 'Georgy Gurry', 0, '142 Bonner Pass', '0366331558', 'ggurryf@ucoz.com');
 insert into users (user_id, full_name, gender, address, phone, email) values (17, 'Maxim McGaughie', 0, '55447 Lillian Place', '0939536240', 'mmcgaughieg@soup.io');
 insert into users (user_id, full_name, gender, address, phone, email) values (18, 'Brandice Waine', 1, '1 Shasta Terrace', '0412994087', 'bwaineh@miibeian.gov.cn');

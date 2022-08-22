@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -14,9 +15,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-@Entity
-public class Receipt {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
+public class Receipt implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "receipt_id" )
@@ -24,12 +28,16 @@ public class Receipt {
 
     @Column( name = "receipt_buying_date" )
     private Date receiptBuyingDate;
-
+    
+    @Column( name = "total_price")
+    private long totalPrice;
+    
     @ManyToOne
     @JoinColumn( name = "user_id" )
     private Users users;
 
     @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    @JsonIgnore
     private List<Ticket> lstTicket;
 
     public Receipt() {

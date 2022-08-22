@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,10 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table( name = "plane" )
-public class Plane {
+public class Plane implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "plane_id" )
@@ -31,6 +36,7 @@ public class Plane {
     private int totalSeat;
 
     @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    @JsonIgnore
     private Set<Flight> lstFlightsPlane;
 
 }

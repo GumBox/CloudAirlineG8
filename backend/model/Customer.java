@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,10 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table( name = "customer" )
-public class Customer {
+public class Customer implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "customer_id" )
@@ -33,6 +37,7 @@ public class Customer {
     private String email;
 
     @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    @JsonIgnore
     private Set<Ticket> lstTicketCustomer;
 
     /**

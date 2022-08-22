@@ -34,7 +34,7 @@ public class TicketServiceImpl implements TicketService {
     public Ticket getTicketById( long id ) throws ResourceNotFoundException {
 
         Optional<Ticket> optional = ticketRepository.findById(id);
-        Ticket ticket = null;
+        Ticket ticket = optional.get();
 
         if (optional.isPresent()) {
             ticket = optional.get();
