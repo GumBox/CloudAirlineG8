@@ -11,7 +11,9 @@ import Plane from "./Pages/Introduce/Plane";
 import Partner from "./Pages/Introduce/Partner"
 import TermsAndCondition from "./Pages/Rule/TermsAndCondition"
 import ProtectInf from "./Pages/Rule/ProtectInf";
-import ListUser from "./Components/ListUser";
+
+import Endow from "./Pages/Endow";
+
 
 function App() {
   return (
@@ -29,7 +31,7 @@ function App() {
           <Route path="partner" element={< Partner />} />
           <Route path="termsandcondition" element={< TermsAndCondition />} />
           <Route path="protectinf" element={< ProtectInf />} />
-          <Route path="/user" element={< ListUser />} />
+          <Route path="endow" element={<Endow />} />
         </Route>
       </Routes>
     </BrowserRouter>

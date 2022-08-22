@@ -1,72 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "../../Css/Tickets.css";
-import { useEffect, useState } from "react"
+
 
 function Ticket() {
 
-    const [ticket, setTicket] = useState(null);
-    const [categories, setCategories] = useState(null);
-    const [searchTerm, setSearchTerm] = useState('');
 
-
-    useEffect(() => {
-        console.log('app useeffect!!');
-        let url = 'http://localhost:8080/mainreceipt/receipt';
-        const uri = 'http://localhost:3000/contact/send';
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                setTicket(data);
-            });
-
-        console.log('app useeffect!!');
-        let url_category = 'http://localhost:8080/mainreceipt/receipt';
-
-        fetch(url_category)
-            .then((response) => response.json())
-            .then((data) => {
-                setCategories(data);
-            });
-    }, []);
-    var category_jsx = [];
-
-    if (categories != null) {
-        category_jsx = (
-            <nav className="navbar navbar-inverse bg-light">
-                <ul className="nav navbar-nav">
-                    {
-                        (category_jsx = categories.map((item) => (
-                            <li>
-                                <Link to={'category/' + item.flight_date}>
-                                    {item.flight_date}
-                                </Link>
-                            </li>
-                        )))
-                    }
-                </ul>
-            </nav>
-        );
-    }
-
-    // const doSearch = () => {
-    //     console.log('searchTerm', searchTerm);
-    //     console.log('app useeffect!!');
-    //     let url =
-    //         'https://62b90e92ff109cd1dc8ad594.mockapi.io/ticket?name=' + searchTerm;
-
-    //     fetch(url)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             setSearchTerm('');
-    //             setTicket(data);
-    //         });
-    // };
 
     return (
         <>
             {/* HEADER & CAROUSEL */}
-            <div className="tab-header bg-warning">
+            <div className="tab-header">
 
                 <div className="container">
                     <ul class="nav nav-pills nav-justified ">
@@ -132,8 +76,8 @@ function Ticket() {
                         <div id="flightDate" class="carousel slide  " >
                             <div class="carousel-inner bg-danger ">
                                 <div class="carousel-item active">
-                                    {category_jsx}
-                                    {/* <button type="button" className="col-md-1 date-flight">
+
+                                    <button type="button" className="col-md-1 date-flight">
                                         <p className="text-center time-ticket">
                                             01 Thg 09
                                         </p>
@@ -392,7 +336,7 @@ function Ticket() {
                                         <p className="text-center price-ticket">
                                             1,477,000 <small><sup>VND</sup></small>
                                         </p>
-                                    </button> */}
+                                    </button>
                                 </div>
                             </div>
                             <button class="carousel-prev" type="button" data-bs-target="#flightDate" data-bs-slide="prev">
