@@ -7,22 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Receipt;
-import com.example.demo.model.Ticket;
 import com.example.demo.repository.ReceiptRepository;
-import com.example.demo.repository.TicketRepository;
 
 @Service
 public class ReceiptServiceImpl implements ReceiptService {
 
     @Autowired
     private ReceiptRepository receiptRepository;
-    private TicketRepository ticketRepository;
 
     @Override
     public List<Receipt> getAllReceipt() { return receiptRepository.findAll(); }
-
-    @Override
-    public List<Ticket> getAllTicket() { return ticketRepository.findAll(); }
 
     @Override
     public Receipt getReceiptById( long id ) {
@@ -36,21 +30,6 @@ public class ReceiptServiceImpl implements ReceiptService {
             throw new RuntimeException("Hóa đơn không thấy với mã: " + id);
         }
         return receipt;
-
-    }
-
-    @Override
-    public Ticket getTicketById( long id ) {
-
-        Optional<Ticket> optional = ticketRepository.findById(id);
-        Ticket ticket = null;
-
-        if (optional.isPresent()) {
-            ticket = optional.get();
-        } else {
-            throw new RuntimeException("Vé không thấy với mã: " + id);
-        }
-        return ticket;
 
     }
 

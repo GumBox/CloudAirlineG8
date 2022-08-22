@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.CascadeType;
@@ -14,10 +15,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table( name = "ticket" )
-public class Ticket {
+public class Ticket implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "ticket_id" )
@@ -27,7 +31,8 @@ public class Ticket {
     private String ticketPrice;
 
     @OneToOne( cascade = CascadeType.ALL )
-    @JoinColumn( name = "seat_id", referencedColumnName = "seat_id" )
+    @JoinColumn( name = "seat_id")
+    @JsonIgnore
     private Seat seat;
 
     @Column( name = "flight_date" )

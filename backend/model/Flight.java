@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Set;
 
@@ -14,10 +15,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table( name = "flight" )
-public class Flight {
+public class Flight implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "flight_id" )
@@ -30,6 +35,7 @@ public class Flight {
     private Time timeTo;
 
     @OneToMany( cascade = CascadeType.ALL )
+    @JsonIgnore
     private Set<Ticket> lstTicketFlight;
 
     @ManyToOne

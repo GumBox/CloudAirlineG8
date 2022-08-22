@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -10,9 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
-public class Users {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
+public class Users implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "user_id" )
@@ -30,6 +34,7 @@ public class Users {
     private String email;
 
     @OneToMany( fetch = FetchType.LAZY, mappedBy = "users" )
+    @JsonIgnore
     private Set<Receipt> lstReceipt;
 
     public Users() {
