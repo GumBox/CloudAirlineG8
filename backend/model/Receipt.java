@@ -24,7 +24,10 @@ public class Receipt {
 
     @Column( name = "receipt_buying_date" )
     private Date receiptBuyingDate;
-
+    
+    @Column( name = "total_price")
+    private long totalPrice;
+    
     @ManyToOne
     @JoinColumn( name = "user_id" )
     private Users users;

@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,11 +26,9 @@ public class Ticket {
     @Column( name = "ticket_price" )
     private String ticketPrice;
 
-    @Column( name = "class" )
-    private String ticketClass;
-
-    @Column( name = "seat_number" )
-    private int seatNumber;
+    @OneToOne( cascade = CascadeType.ALL )
+    @JoinColumn( name = "seat_id", referencedColumnName = "seat_id" )
+    private Seat seat;
 
     @Column( name = "flight_date" )
     private Date flightDate;
