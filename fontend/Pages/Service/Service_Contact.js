@@ -83,8 +83,6 @@ function Service_Contact() {
                                             <td className="col-md-8">Các trường đánh dấu (*) là bắt buộc</td>
                                         </tr>
                                     </table>
-                                                                                            <input type="submit" className="btn btn-danger float-end" value="Gửi">
-                                    </input>
                                 </form>
                             </div>
                         </div>

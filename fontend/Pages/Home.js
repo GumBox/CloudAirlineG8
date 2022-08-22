@@ -6,6 +6,7 @@ import sv1 from '../images/service.png';
 import sv2 from '../images/service1.jpg';
 import logo from '../images/Logo.png';
 import ProductList from '../Components/ProductsList';
+import axios from 'axios';
 
 import banner from '../images/banner.png';
 import banner02 from '../images/Banner02.png';
@@ -20,20 +21,31 @@ function Home() {
     const [categories, setCategories] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
 
+    const [receipt] = useState('');
     useEffect(() => {
-        console.log('app useeffect!!');
-        let url = 'https://62b90e92ff109cd1dc8ad594.mockapi.io/shop';
 
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                setShop(data);
-            });
+        console.log('app useeffect!!');
+        // let url = 'http://localhost:8080/mainreceipt/receipt';
+
+        // fetch(url, { mode: 'no-cors' })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         setShop(data);
+        //     });
+        axios.get(`http://localhost:8080/mainreceipt/receipt`)
+
+            .then(res => {
+                const persons = res.data;
+                receipt.setState({ persons });
+            })
+            .catch(error => console.log(error));
     }, []);
 
     return (
 
         <>
+
+
 
             <div>
                 {/* Banner */}
@@ -568,7 +580,6 @@ function Home() {
             </div>
 
         </>
-    )
-
+    );
 }
 export default Home;

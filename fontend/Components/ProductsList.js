@@ -21,15 +21,13 @@ function ProductList(props) {
 
             <div class="col-md-4">
                 <div className='card m-3'>
-                    <img className=" w-100" src={item.pictures} />
+                    <img className=" w-100" src={item.user_id} />
                     <div className="text-center">
-                        <p class="title h5 text-center">{item.title}</p>
-                        <p className=" category text-center text-danger">{item.category}</p>
-                        <p class="title h3 text-center text-primary">{item.Price}đ</p>
+                        <p class="title h5 text-center">{item.receipt_id}</p>
+                        <p className=" category text-center text-danger">{item.receipt_bying_date}</p>
 
-                        <Link to={'/buy/' + item.id}>
-                            <button class="btn btn-primary">Buy</button>
-                        </Link>
+
+
                     </div>
                 </div>
             </div>
