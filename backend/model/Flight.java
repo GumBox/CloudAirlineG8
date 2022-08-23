@@ -48,39 +48,26 @@ public class Flight implements Serializable {
 
     }
 
-    /**
-     * @return the timeFrom
-     */
     public Time getTimeFrom() { return timeFrom; }
 
-    /**
-     * @param timeFrom the timeFrom to set
-     */
     public void setTimeFrom( Time timeFrom ) { this.timeFrom = timeFrom; }
 
-    /**
-     * @return the timeTo
-     */
     public Time getTimeTo() { return timeTo; }
 
-    /**
-     * @param timeTo the timeTo to set
-     */
     public void setTimeTo( Time timeTo ) { this.timeTo = timeTo; }
 
-    /**
-     * @return the plane
-     */
+    public Set<Ticket> getLstTicketFlight() { return lstTicketFlight; }
+
+    public void setLstTicketFlight( Set<Ticket> lstTicketFlight ) {
+
+        this.lstTicketFlight = lstTicketFlight;
+
+    }
+
     public Plane getPlane() { return plane; }
 
-    /**
-     * @param plane the plane to set
-     */
     public void setPlane( Plane plane ) { this.plane = plane; }
 
-    /**
-     * @return the flightID
-     */
     public long getFlightID() { return flightID; }
 
 }

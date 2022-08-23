@@ -45,53 +45,26 @@ public class Plane implements Serializable {
 
     }
 
-    /**
-     * @return the planeBrand
-     */
     public String getPlaneBrand() { return planeBrand; }
 
-    /**
-     * @param planeBrand the planeBrand to set
-     */
     public void setPlaneBrand( String planeBrand ) { this.planeBrand = planeBrand; }
 
-    /**
-     * @return the planeCode
-     */
     public String getPlaneCode() { return planeCode; }
 
-    /**
-     * @param planeCode the planeCode to set
-     */
     public void setPlaneCode( String planeCode ) { this.planeCode = planeCode; }
 
-    /**
-     * @return the totalSeat
-     */
     public int getTotalSeat() { return totalSeat; }
 
-    /**
-     * @param totalSeat the totalSeat to set
-     */
     public void setTotalSeat( int totalSeat ) { this.totalSeat = totalSeat; }
 
-    /**
-     * @return the lstFlightsPlane
-     */
     public Set<Flight> getLstFlightsPlane() { return lstFlightsPlane; }
 
-    /**
-     * @param lstFlightsPlane the lstFlightsPlane to set
-     */
     public void setLstFlightsPlane( Set<Flight> lstFlightsPlane ) {
 
         this.lstFlightsPlane = lstFlightsPlane;
 
     }
 
-    /**
-     * @return the planeID
-     */
     public long getPlaneID() { return planeID; }
 
 }

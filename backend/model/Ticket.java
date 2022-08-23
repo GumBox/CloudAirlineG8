@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Ticket implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "ticket_id" )
@@ -37,7 +38,7 @@ public class Ticket implements Serializable {
     @Column( name = "flight_date" )
     private Date flightDate;
 
-    @ManyToOne( fetch = FetchType.LAZY )
+    @ManyToOne
     @JoinColumn( name = "flight_id" )
     private Flight flight;
 
@@ -59,80 +60,34 @@ public class Ticket implements Serializable {
 
     }
 
-    /**
-     * @return the ticketPrice
-     */
     public String getTicketPrice() { return ticketPrice; }
 
-    /**
-     * @param ticketPrice the ticketPrice to set
-     */
     public void setTicketPrice( String ticketPrice ) { this.ticketPrice = ticketPrice; }
 
-    /**
-     * @return the seat
-     */
     public Seat getSeat() { return seat; }
 
-    /**
-     * @param seat the seat to set
-     */
     public void setSeat( Seat seat ) { this.seat = seat; }
 
-    /**
-     * @return the flightDate
-     */
     public Date getFlightDate() { return flightDate; }
 
-    /**
-     * @param flightDate the flightDate to set
-     */
     public void setFlightDate( Date flightDate ) { this.flightDate = flightDate; }
 
-    //
-    // /**
-    // * @return the flight
-    // */
-    // public Flight getFlight() { return flight; }
+    public Flight getFlight() { return flight; }
 
-    /**
-     * @param flight the flight to set
-     */
     public void setFlight( Flight flight ) { this.flight = flight; }
 
-    /**
-     * @return the place
-     */
     public Place getPlace() { return place; }
 
-    /**
-     * @param place the place to set
-     */
     public void setPlace( Place place ) { this.place = place; }
 
-    /**
-     * @return the customer
-     */
     public Customer getCustomer() { return customer; }
 
-    /**
-     * @param customer the customer to set
-     */
     public void setCustomer( Customer customer ) { this.customer = customer; }
 
-    /**
-     * @return the receipt
-     */
     public Receipt getReceipt() { return receipt; }
 
-    /**
-     * @param receipt the receipt to set
-     */
     public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
 
-    /**
-     * @return the ticketID
-     */
     public long getTicketID() { return ticketID; }
 
 }

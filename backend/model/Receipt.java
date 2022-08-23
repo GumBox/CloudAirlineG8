@@ -46,46 +46,26 @@ public class Receipt implements Serializable {
 
     }
 
-    public Receipt(Date receiptBuyingDate, Users users) {
-
-        super();
-        this.receiptBuyingDate = receiptBuyingDate;
-        this.users = users;
-
-    }
-
-    /**
-     * @return the receiptID
-     */
-    public long getReceiptID() { return receiptID; }
-
-    /**
-     * @return the receiptBuyingDate
-     */
     public Date getReceiptBuyingDate() { return receiptBuyingDate; }
 
-    /**
-     * @param receiptBuyingDate the receiptBuyingDate to set
-     */
     public void setReceiptBuyingDate( Date receiptBuyingDate ) {
 
         this.receiptBuyingDate = receiptBuyingDate;
 
     }
 
-    /**
-     * @return the users
-     */
+    public long getTotalPrice() { return totalPrice; }
+
+    public void setTotalPrice( long totalPrice ) { this.totalPrice = totalPrice; }
+
     public Users getUsers() { return users; }
 
-    /**
-     * @param users the users to set
-     */
     public void setUsers( Users users ) { this.users = users; }
 
-    /**
-     * @param receiptID the receiptID to set
-     */
-    public void setReceiptID( long receiptID ) { this.receiptID = receiptID; }
+    public List<Ticket> getLstTicket() { return lstTicket; }
+
+    public void setLstTicket( List<Ticket> lstTicket ) { this.lstTicket = lstTicket; }
+
+    public long getReceiptID() { return receiptID; }
 
 }

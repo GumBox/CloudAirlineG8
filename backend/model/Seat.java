@@ -35,39 +35,18 @@ public class Seat {
 
     }
 
-    /**
-     * @return the seatNumber
-     */
     public int getSeatNumber() { return seatNumber; }
 
-    /**
-     * @param seatNumber the seatNumber to set
-     */
     public void setSeatNumber( int seatNumber ) { this.seatNumber = seatNumber; }
 
-    /**
-     * @return the seatClass
-     */
     public String getSeatClass() { return seatClass; }
 
-    /**
-     * @param seatClass the seatClass to set
-     */
     public void setSeatClass( String seatClass ) { this.seatClass = seatClass; }
 
-    /**
-     * @return the ticket
-     */
     public Ticket getTicket() { return ticket; }
 
-    /**
-     * @param ticket the ticket to set
-     */
     public void setTicket( Ticket ticket ) { this.ticket = ticket; }
 
-    /**
-     * @return the seatID
-     */
     public long getSeatID() { return seatID; }
 
 }
