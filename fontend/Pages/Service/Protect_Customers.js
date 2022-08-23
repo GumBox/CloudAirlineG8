@@ -1,6 +1,5 @@
 import React from "react";
-import vidcloud from "../../images/cloudVideo.mp4"
-import "../../Css/Service_Contact.css"
+import "../../Css/Info.css"
 
 
 
@@ -9,12 +8,9 @@ import "../../Css/Service_Contact.css"
 function Protect_Customers() {
     return (
         <>
-            <div className="container-fluid" >
-                <video width="100%" autoPlay muted>
-                    <source src={vidcloud} type="video/mp4" />
-
-                </video>
-                <div className="col-md-5 alooo" >
+            <div className="container-fluid img-bg" >
+                
+                <div className="col-md-5 aloo1" >
                     <p className="h1 text-center text-white " >
                         HỆ THỐNG CHĂM SÓC KHÁCH HÀNG CỦA CLOUD AIRLINE
                     </p>

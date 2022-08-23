@@ -1,14 +1,10 @@
-.aloo1{
-    position: relative;
-    top: 15%;
-    left: 30%;
+.alo1{
+    position: inherit;
+    margin: 0% 0% 0% 7%;
 
 }
-.img-bg{
-    background-image: url('https://anhdephd.vn/wp-content/uploads/2022/06/background-may-trang-troi-xam.jpg');
-}
-
-@media screen and (width: 800% ) {    
+.img-bg1{
+    background-image: url('https://www.vietnamairlines.com/~/media/Covid-19-Banner/1903x564/antoantrainghiembay_1903x564.jpg');
 }
 .img-hover-zoom {
     overflow: hidden;

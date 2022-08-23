@@ -3,9 +3,6 @@ import vidcloud from "../../images/cloudVideo.mp4"
 import "../../Css/Service_Contact.css"
 
 
-
-
-
 function Customer_Care() {
     return (
         <>
@@ -26,11 +23,11 @@ function Customer_Care() {
                             <div class="card" >
                                 <div className="text-center row" >
                                 <div className=" col-md-6">
-                                    <div class="master card">
+                                    <div class="img-hover-zoom1 master-card">
                                     <img
                                         src="https://www.vietnamairlines.com/~/media/Images/VNANew/Landingpage%20Mega%20Menu/Customer%20Care/faqs.jpg"
                                         alt=""
-                                        class="img1"
+                                        class="img-fluid"
                                         style={{ width: '100%' }}
                                     />
                                     <div class="card-body" style={{backgroundColor: "#f8f3e7"}}>
@@ -43,7 +40,7 @@ function Customer_Care() {
                             
                                 </div>
                                 <div className=" col-md-6">
-                                    <div class="master card">
+                                    <div class="img-hover-zoom1 master-card">
                                     <img
                                         src="https://www.vietnamairlines.com/~/media/Images/VNANew/Landingpage%20Mega%20Menu/Customer%20Care/social-care.jpg"
                                         alt=""
@@ -57,7 +54,7 @@ function Customer_Care() {
                                     </div></div><br/>
                                 </div>
                                 <div className=" col-md-6">
-                                    <div class="master card">
+                                    <div class="img-hover-zoom1 master-card">
                                     <img
                                         src="https://www.vietnamairlines.com/~/media/Images/VNANew/Landingpage%20Mega%20Menu/Customer%20Care/email-us.jpg"
                                         alt=""
@@ -71,7 +68,7 @@ function Customer_Care() {
                                     </div></div>
                                 </div>
                                 <div className=" col-md-6">
-                                    <div class="master card">
+                                    <div class="img-hover-zoom1 master-card">
                                     <img
                                         src="https://www.vietnamairlines.com/~/media/Images/VNANew/Landingpage%20Mega%20Menu/Customer%20Care/contact-us.jpg"
                                         alt=""

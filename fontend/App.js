@@ -19,10 +19,13 @@ import Protect_Customers from "./Pages/Service/Protect_Customers";
 import Baggage_Information from "./Pages/Useful_Information/Baggage_Information";
 import Purchase_Guide from "./Pages/Useful_Information/Purchase_Guide";
 import Taxes_Surcharges from "./Pages/Useful_Information/Taxes_Surcharges";
+import InfoTravel from "./Pages/Menu/InfoTravel";
+import Service_menu from "./Pages/Menu/Service";
+import Introduce from "./Pages/Menu/Introduce";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <Routes> InfoTravel
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="service_contact" element={< Service_Contact />} />
@@ -36,6 +39,9 @@ function App() {
           <Route path="guide" element={< Purchase_Guide />} />
           <Route path="Taxes_Surcharges" element={< Taxes_Surcharges />} />
           <Route path="/ticket/infcustomer" element={< InfomationCustomer />} />
+          <Route path="infotravel" element={< InfoTravel />} />
+          <Route path="servicemenu" element={< Service_menu />} />
+          <Route path="introduce" element={<Introduce/>}/>
           <Route path="/ticket/spServices" element={< SupportServices />} />
           <Route path="/ticket/seat" element={< Seat />} />
           <Route path="company" element={< Company />} />
@@ -43,6 +49,7 @@ function App() {
           <Route path="partner" element={< Partner />} />
           <Route path="termsandcondition" element={< TermsAndCondition />} />
           <Route path="protectinf" element={< ProtectInf />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
