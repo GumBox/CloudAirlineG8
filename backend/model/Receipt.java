@@ -28,10 +28,10 @@ public class Receipt implements Serializable {
 
     @Column( name = "receipt_buying_date" )
     private Date receiptBuyingDate;
-    
-    @Column( name = "total_price")
+
+    @Column( name = "total_price" )
     private long totalPrice;
-    
+
     @ManyToOne
     @JoinColumn( name = "user_id" )
     private Users users;
@@ -83,11 +83,9 @@ public class Receipt implements Serializable {
      */
     public void setUsers( Users users ) { this.users = users; }
 
-    
     /**
      * @param receiptID the receiptID to set
      */
     public void setReceiptID( long receiptID ) { this.receiptID = receiptID; }
 
-    
 }

@@ -26,7 +26,7 @@ public class Seat {
     @Column( name = "seat_class" )
     private String seatClass;
 
-    @OneToOne( mappedBy = "seat", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false )
+    @OneToOne( mappedBy = "seat", cascade = CascadeType.ALL, fetch = FetchType.LAZY )
     private Ticket ticket;
 
     public Seat() {
@@ -34,11 +34,6 @@ public class Seat {
         super();
 
     }
-
-    /**
-     * @return the seatID
-     */
-    public long getSeatID() { return seatID; }
 
     /**
      * @return the seatNumber
@@ -59,5 +54,20 @@ public class Seat {
      * @param seatClass the seatClass to set
      */
     public void setSeatClass( String seatClass ) { this.seatClass = seatClass; }
+
+    /**
+     * @return the ticket
+     */
+    public Ticket getTicket() { return ticket; }
+
+    /**
+     * @param ticket the ticket to set
+     */
+    public void setTicket( Ticket ticket ) { this.ticket = ticket; }
+
+    /**
+     * @return the seatID
+     */
+    public long getSeatID() { return seatID; }
 
 }

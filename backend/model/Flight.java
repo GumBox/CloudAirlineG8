@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Flight implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "flight_id" )
@@ -41,5 +41,46 @@ public class Flight implements Serializable {
     @ManyToOne
     @JoinColumn( name = "plane_id" )
     private Plane plane;
+
+    public Flight() {
+
+        super();
+
+    }
+
+    /**
+     * @return the timeFrom
+     */
+    public Time getTimeFrom() { return timeFrom; }
+
+    /**
+     * @param timeFrom the timeFrom to set
+     */
+    public void setTimeFrom( Time timeFrom ) { this.timeFrom = timeFrom; }
+
+    /**
+     * @return the timeTo
+     */
+    public Time getTimeTo() { return timeTo; }
+
+    /**
+     * @param timeTo the timeTo to set
+     */
+    public void setTimeTo( Time timeTo ) { this.timeTo = timeTo; }
+
+    /**
+     * @return the plane
+     */
+    public Plane getPlane() { return plane; }
+
+    /**
+     * @param plane the plane to set
+     */
+    public void setPlane( Plane plane ) { this.plane = plane; }
+
+    /**
+     * @return the flightID
+     */
+    public long getFlightID() { return flightID; }
 
 }

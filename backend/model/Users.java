@@ -33,7 +33,7 @@ public class Users implements Serializable {
 
     private String email;
 
-    @OneToMany( fetch = FetchType.LAZY, mappedBy = "users" )
+    @OneToMany( mappedBy = "users", fetch = FetchType.LAZY )
     @JsonIgnore
     private Set<Receipt> lstReceipt;
 
@@ -42,23 +42,6 @@ public class Users implements Serializable {
         super();
 
     }
-
-    public Users(String fullName, boolean gender, String address, String phone,
-                    String email) {
-
-        super();
-        this.fullName = fullName;
-        this.gender = gender;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
-
-    }
-
-    /**
-     * @return the userID
-     */
-    public long getUserID() { return userID; }
 
     /**
      * @return the fullName
@@ -109,5 +92,10 @@ public class Users implements Serializable {
      * @param email the email to set
      */
     public void setEmail( String email ) { this.email = email; }
+
+    /**
+     * @return the userID
+     */
+    public long getUserID() { return userID; }
 
 }

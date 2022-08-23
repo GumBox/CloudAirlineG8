@@ -53,80 +53,86 @@ public class Ticket implements Serializable {
     @JoinColumn( name = "receipt_id" )
     private Receipt receipt;
 
-    public Ticket() { super(); }
+    public Ticket() {
 
-    
+        super();
+
+    }
+
     /**
-     * @return the customer
+     * @return the ticketPrice
      */
-    public Customer getCustomer() { return customer; }
+    public String getTicketPrice() { return ticketPrice; }
 
-    
     /**
-     * @param customer the customer to set
+     * @param ticketPrice the ticketPrice to set
      */
-    public void setCustomer( Customer customer ) { this.customer = customer; }
+    public void setTicketPrice( String ticketPrice ) { this.ticketPrice = ticketPrice; }
 
-
-    
-    /**
-     * @return the flightDate
-     */
-    public Date getFlightDate() { return flightDate; }
-
-
-    
-    /**
-     * @param flightDate the flightDate to set
-     */
-    public void setFlightDate( Date flightDate ) { this.flightDate = flightDate; }
-
-
-    
-    /**
-     * @return the place
-     */
-    public Place getPlace() { return place; }
-
-
-    
-    /**
-     * @param place the place to set
-     */
-    public void setPlace( Place place ) { this.place = place; }
-
-
-    
-    /**
-     * @return the receipt
-     */
-    public Receipt getReceipt() { return receipt; }
-
-
-    
-    /**
-     * @param receipt the receipt to set
-     */
-    public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
-
-
-    
     /**
      * @return the seat
      */
     public Seat getSeat() { return seat; }
 
-
-    
     /**
      * @param seat the seat to set
      */
     public void setSeat( Seat seat ) { this.seat = seat; }
 
+    /**
+     * @return the flightDate
+     */
+    public Date getFlightDate() { return flightDate; }
 
-    
-    
-    
+    /**
+     * @param flightDate the flightDate to set
+     */
+    public void setFlightDate( Date flightDate ) { this.flightDate = flightDate; }
 
+    //
+    // /**
+    // * @return the flight
+    // */
+    // public Flight getFlight() { return flight; }
+
+    /**
+     * @param flight the flight to set
+     */
+    public void setFlight( Flight flight ) { this.flight = flight; }
+
+    /**
+     * @return the place
+     */
+    public Place getPlace() { return place; }
+
+    /**
+     * @param place the place to set
+     */
+    public void setPlace( Place place ) { this.place = place; }
+
+    /**
+     * @return the customer
+     */
+    public Customer getCustomer() { return customer; }
+
+    /**
+     * @param customer the customer to set
+     */
+    public void setCustomer( Customer customer ) { this.customer = customer; }
+
+    /**
+     * @return the receipt
+     */
+    public Receipt getReceipt() { return receipt; }
+
+    /**
+     * @param receipt the receipt to set
+     */
+    public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
+
+    /**
+     * @return the ticketID
+     */
+    public long getTicketID() { return ticketID; }
 
 }
