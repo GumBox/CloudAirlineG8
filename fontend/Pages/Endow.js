@@ -4,7 +4,7 @@ import banner04 from "../images/banner04.png"
 import img1 from "../images/image1.jpg";
 import img2 from "../images/image2.jpg";
 import img3 from "../images/image3.jpg";
-
+import "../Css/Endow.css";
 
 
 const Endow = () => {
@@ -25,30 +25,37 @@ const Endow = () => {
                         <img src={img2} className="col-md-4"></img>
                         <img src={img3} className="col-md-4"></img>
                     </div>
-                    <div>
+                    <div className="    bgr-enrow">
                         <div className="row my-5">
-                            <div className="col-md-3 item-enrow">
-                                <i class="fa-solid fa-calendar-check"></i>
-                                Tín đồ "xê dịch"
+                            <div className="text-center col-md-3 item-enrow">
+                                <div className="card">
+                                    <i class=" pt-3 fa-solid fa-calendar-check"></i>
+                                    <br />   Tín đồ "xê dịch"</div>
                             </div>
-                            <div className="col-md-3 item-enrow">
-                                <i class="fa-solid fa-cart-plus"></i>
-                                Tín đồ mua sắm
+                            <div className="text-center col-md-3 item-enrow">
+                                <div className="card">
+                                    <i class=" pt-3 fa-solid fa-cart-plus"></i>
+                                    <br />     Tín đồ mua sắm</div>
                             </div>
-                            <div className="col-md-3 item-enrow">
-                                <i class="fa-solid fa-mountain-city"></i>
-                                Tín đồ khám phá
+                            <div className="text-center col-md-3 item-enrow">
+                                <div className="card">
+                                    <i class=" pt-3 fa-solid fa-mountain-city"></i>
+                                    <br />    Tín đồ khám phá</div>
                             </div>
-                            <div className="col-md-3 item-enrow">
-                                <i class="fa-solid fa-hotel"></i>
-                                Tín đồ nghỉ dưỡng
+                            <div className="text-center col-md-3 item-enrow">
+                                <div className="card">
+                                    <i class=" pt-3 fa-solid fa-hotel"></i>
+                                    <br />  Tín đồ nghỉ dưỡng</div>
                             </div>
                         </div>
 
                         <div className="row mb-5">
                             <div className="calendar">
-                                <table class="table text-center table-bordered border border-primary">
-                                    <thead>
+                                <br />
+                                <br />
+
+                                <table cellPadding={8} class="table text-center table-bordered border-primary ">
+                                    <thead >
                                         <th className="border border-1 h5 border-primary" >Thứ 2</th>
                                         <th className="border border-1 h5 border-primary">Thứ 3</th>
                                         <th className="border border-1 h5 border-primary">Thứ 4</th>
@@ -57,7 +64,7 @@ const Endow = () => {
                                         <th className="h5">Thứ 7</th>
                                         <th className="h5">Chủ Nhật</th>
                                     </thead>
-                                    <tbody>
+                                    <tbody className="bg-white">
                                         <tr>
                                             <td colSpan="2" className="h6 text-primary">
                                                 Midnight Sale
@@ -103,13 +110,13 @@ const Endow = () => {
                                 </table>
                             </div>
                         </div>
-                        <p className="h1 text-center text-primary">
+                        <p className="h1 text-center endow-title my-5">
                             LỢI ÍCH CỦA VIỆC ĐẶT VÉ TRỰC TUYẾN
                         </p>
                         <div className="row">
-                            <div className="col-md-4">
+                            <div className="col-md-4 bgr-icon-endow">
                                 <p>
-                                    <i class="fa-solid fa-plane-up rounded-circle border border-primary"></i>
+                                    <i class="icon-endow fa-solid fa-plane-up rounded-circle border border-primary"></i>
                                 </p>
                                 <p className="h5">
                                     Miễn phí xuất vé
@@ -118,9 +125,9 @@ const Endow = () => {
                                     Miễn phí hoàn toàn xuất vé khi đặt mua trên website và ứng dụng di động
                                 </p>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-md-4 bgr-icon-endow">
                                 <p>
-                                    <i class="fa-solid fa-mobile-button rounded-circle border border-primary"></i>
+                                    <i class="icon-endow fa-solid fa-mobile-button rounded-circle border border-primary"></i>
                                 </p>
                                 <p className="h5">
                                     Hỗ trợ 24/7
@@ -129,22 +136,21 @@ const Endow = () => {
                                     Chatbot luôn sẵn sàng hỗ trợ bạn mọi lúc mọi nơi
                                 </p>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-md-4 bgr-icon-endow">
                                 <p>
-                                    <i class="fa-solid fa-gift rounded-circle border border-primary"></i>
+                                    <i class="icon-endow fa-solid fa-gift rounded-circle border border-primary"></i>
                                 </p>
                                 <p className="h5">
                                     Giá vé tốt nhất
                                 </p>
-                                <p>
+                                <p >
                                     Giá tốt kèm nhiều ưu đãi đặc biệt chỉ có trên kênh đặt vé trực tuyến Cloud Airline
                                 </p>
                             </div>
                         </div>
 
-                        <div className="">
 
-                        </div>
+
 
                     </div>
                 </div>
