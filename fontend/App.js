@@ -22,6 +22,8 @@ import Taxes_Surcharges from "./Pages/Useful_Information/Taxes_Surcharges";
 import InfoTravel from "./Pages/Menu/InfoTravel";
 import Service_menu from "./Pages/Menu/Service";
 import Introduce from "./Pages/Menu/Introduce";
+import Checkin from "./Pages/Menu/Infoplus/Checkin";
+import Airport from "./Pages/Menu/Infoplus/Airport";
 function App() {
   return (
     <BrowserRouter>
@@ -42,6 +44,8 @@ function App() {
           <Route path="infotravel" element={< InfoTravel />} />
           <Route path="servicemenu" element={< Service_menu />} />
           <Route path="introduce" element={<Introduce/>}/>
+          <Route path="checkin" element={<Checkin/>}/>
+          <Route path="airport" element={<Airport/>}/>
           <Route path="/ticket/spServices" element={< SupportServices />} />
           <Route path="/ticket/seat" element={< Seat />} />
           <Route path="company" element={< Company />} />
