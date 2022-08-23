@@ -343,6 +343,7 @@ function Ticket() {
                                 <span class="carousel-button-prev" ><i class="fa-solid fa-chevron-left"></i></span>
 
                             </button>
+
                             <button class="carousel-next float-end " type="button" data-bs-target="#flightDate" data-bs-slide="next">
                                 <span className="carousel-button-next" ><i class="fa-solid fa-chevron-right"></i></span>
 

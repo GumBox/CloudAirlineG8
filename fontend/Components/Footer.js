@@ -46,16 +46,16 @@ const Footer = () => {
 
                             <li className="menu-item-title h4">Hỗ Trợ</li>
                             <li className="menu-item"><Link to='service_contact'>Góp Ý Dịch Vụ</Link></li>
-                            <li className="menu-item"><Link to='baohiem'>Chăm Sóc Khách Hàng</Link></li>
-                            <li className="menu-item"><Link to='baoduongsuachua'>Chính Sách Bảo Vệ Khách Hàng</Link></li>
+                            <li className="menu-item"><Link to='customer_care'>Chăm Sóc Khách Hàng</Link></li>
+                            <li className="menu-item"><Link to='protectcustomers'>Chính Sách Bảo Vệ Khách Hàng</Link></li>
 
                         </div>
                         <div className="col-md-3 col-sm-6">
 
-                            <li className="menu-item-title h4">Thông Tin Hưu Ích</li>
-                            <li className="menu-item"><Link to='customercare'>Thông Tin Hành Lý</Link></li>
-                            <li className="menu-item"><Link to='tablestore'>Cẩm Nang Mua Vé</Link></li>
-                            <li className="menu-item"><Link to='baoduongsuachua'>Thuế phí, Lệ Phí & Phụ Thu</Link></li>
+                            <li className="menu-item-title h4">Thông Tin Hữu Ích</li>
+                            <li className="menu-item"><Link to='baggage'>Thông Tin Hành Lý</Link></li>
+                            <li className="menu-item"><Link to='guide'>Cẩm Nang Mua Vé</Link></li>
+                            <li className="menu-item"><Link to='Taxes_Surcharges'>Thuế phí, Lệ Phí & Phụ Thu</Link></li>
                         </div>
 
                     </div>
