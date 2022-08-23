@@ -93,7 +93,7 @@ function Home() {
                     <li class="list-group-item pill active" data-bs-toggle="collapse" data-bs-target="#buyTicket"  >
                         <i class="fa-solid fa-plane me-2 " />
                         Mua vé</li>
-                    <li class="list-group-item " data-bs-toggle="collapse" data-bs-target="#locationManagement">
+                    <li class="list-group-item " data-bs-toggle="collapse" data-bs-target="#locationManagement" >
                         <i class="fa-solid fa-book me-2" />
                         Quản lý đặt chỗ
                     </li>

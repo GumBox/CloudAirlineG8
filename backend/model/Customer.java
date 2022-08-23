@@ -3,6 +3,7 @@ package com.example.demo.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,17 +11,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Users implements Serializable {
+@Table( name = "customer" )
+public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
-    @Column( name = "user_id" )
-    private long userID;
+    @Column( name = "customer_id" )
+    private long customerID;
 
     @Column( name = "full_name" )
     private String fullName;
@@ -33,32 +36,23 @@ public class Users implements Serializable {
 
     private String email;
 
-    @OneToMany( fetch = FetchType.LAZY, mappedBy = "users" )
+    @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL )
     @JsonIgnore
-    private Set<Receipt> lstReceipt;
+    private Set<Ticket> lstTicketCustomer;
 
-    public Users() {
-
-        super();
-
-    }
-
-    public Users(String fullName, boolean gender, String address, String phone,
-                    String email) {
+    /**
+     * 
+     */
+    public Customer() {
 
         super();
-        this.fullName = fullName;
-        this.gender = gender;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
 
     }
 
     /**
-     * @return the userID
+     * @return the customerID
      */
-    public long getUserID() { return userID; }
+    public long getCustomerID() { return customerID; }
 
     /**
      * @return the fullName
