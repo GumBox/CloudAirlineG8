@@ -5,8 +5,6 @@ import sv from '../images/service.jpg';
 import sv1 from '../images/service.png';
 import sv2 from '../images/service1.jpg';
 import logo from '../images/Logo.png';
-import ProductList from '../Components/ProductsList';
-
 import banner from '../images/banner.png';
 import banner02 from '../images/Banner02.png';
 import banner03 from '../images/Banner03.png';
@@ -14,22 +12,58 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 
+export default function Home() {
 
-function Home() {
-    const [shop, setShop] = useState(null);
-    const [categories, setCategories] = useState(null);
-    const [searchTerm, setSearchTerm] = useState('');
+    const [dataOfSeat, setDataOfSeat] = useState(null)
+    const [ticket, setTicket] = useState(null)
 
     useEffect(() => {
-        console.log('app useeffect!!');
-        let url = 'https://62b90e92ff109cd1dc8ad594.mockapi.io/shop';
-
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                setShop(data);
+        fetch('http://localhost:8080/mainseat/seat/')
+            .then((res) => res.json())
+            .then((res) => {
+                setDataOfSeat(res)
+                console.log(res);
             });
-    }, []);
+
+        fetch('http://localhost:8080/mainticket/ticket/')
+            .then((response) => response.json())
+            .then((response) => {
+                setTicket(response)
+
+                console.log(response)
+            });
+    }, [])
+
+
+    var tickets = []
+    if (ticket != null) {
+
+        tickets = ticket.map((item) => {
+            return (
+                <option>
+                    {item.place.placeName}
+                </option>
+            )
+
+        })
+    }
+
+    var list = []
+    if (dataOfSeat !== null) {
+        list = dataOfSeat.map((item) => {
+
+            return (
+                <option>
+                    {item.seatClass}
+                </option>
+            )
+        })
+    }
+
+
+
+
+
 
     return (
 
@@ -133,59 +167,19 @@ function Home() {
                         {/* BUY TICKET */}
                         <div class="collapse show" id="plane" data-bs-parent="#buyTicket">
                             <form className="row card-body" >
-                                <p className="col-sm-12 col-md-2  ">
-                                    Loại vé
-                                    <select name="ticketType" className="form-control"  >
-                                        <option name=" ">
-                                            Một chiều
-                                        </option>
 
-                                        <option name=" ">
-                                            Khứ hồi
-                                        </option>
-
-                                        <option name=" ">
-                                            Nhiều chặng
-                                        </option>
-
-
-                                    </select>
-                                </p>
-                                <p className="col-sm-10  col-md-2 ">
+                                <p className="col-sm-10  col-md-3 ">
                                     Điểm đi
 
                                     <select name="ticketType" className="form-control "  >
-                                        <option name=" ">
-                                            Hà Nội
-                                        </option>
-
-                                        <option name=" ">
-                                            TP.HCM
-                                        </option>
-
-                                        <option name=" ">
-                                            Vinh
-                                        </option>
-
-
+                                        {tickets}
                                     </select>
                                 </p>
-                                <p className="col-sm-10  col-md-2 ">
+                                <p className="col-sm-10  col-md-3 ">
                                     Điểm đến
 
                                     <select name="ticketType" className="form-control "  >
-                                        <option name=" ">
-                                            Hà Nội
-                                        </option>
-
-                                        <option name=" ">
-                                            TP.HCM
-                                        </option>
-
-                                        <option name=" ">
-                                            Vinh
-                                        </option>
-
+                                        {tickets}
 
                                     </select>
                                 </p>
@@ -471,7 +465,7 @@ function Home() {
                                     XUẤT HÓA ĐƠN ĐIỆN TỬ
                                 </p>
                                 <div className="collapse" id="electronicBill" data-bs-parent="#locationManagement" >
-                                    <form className="row card-body">
+                                    <form action="#" className="row card-body">
                                         <p className="col-sm-12 col-md-3">
                                             Họ tên:
                                             <input type="text" className="form-control" name="" placeholder="Họ tên" required />
@@ -519,7 +513,7 @@ function Home() {
 
                 <div className="container">
                     <hr />
-                    <ProductList data={shop}></ProductList>
+
                     <p className="mx-auto text-center h4 mt-4">
                         CÁC DỊCH VỤ BỔ TRỢ
 
@@ -571,4 +565,4 @@ function Home() {
     )
 
 }
-export default Home;
+// export default Home

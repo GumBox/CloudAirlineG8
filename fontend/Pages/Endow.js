@@ -47,7 +47,7 @@ const Endow = () => {
 
                         <div className="row mb-5">
                             <div className="calendar">
-                                <table class="table text-center table-bordered border-primary">
+                                <table class="table text-center table-bordered border border-primary">
                                     <thead>
                                         <th className="border border-1 h5 border-primary" >Thứ 2</th>
                                         <th className="border border-1 h5 border-primary">Thứ 3</th>
