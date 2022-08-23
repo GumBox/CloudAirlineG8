@@ -11,24 +11,19 @@ function Seat() {
             <div className="tab-header bg-warning">
                 <div className="container">
                     <ul class="nav nav-pills nav-justified bg-warning">
-                        <Link to='/ticket/'>
+                        <Link to='ticket'>
                             <li class="nav-link" aria-current="page">
-
                                 <i class="fa-solid fa-plane-circle-check me-2" />
                                 <small>Xem lại chuyến bay</small>
                             </li>
                         </Link>
                         <li className="nav-link ">
-                            <Link to="/ticket/infcustomer">
-                                <i class="fa-solid fa-person-walking-luggage me-2" ><sub><i class="fa-solid fa-circle-check"></i></sub></i>
-                                <small>Thông tin khách</small>
-                            </Link>
+                            <i class="fa-solid fa-person-walking-luggage me-2" ><sub><i class="fa-solid fa-circle-check"></i></sub></i>
+                            <small>Thông tin khách</small>
                         </li>
                         <li className="nav-link ">
-                            <Link to="/ticket/spServices/">
-                                <i class="fa-solid fa-cart-flatbed-suitcase me-2"><sub><i class="fa-solid fa-circle-check"></i></sub></i>
-                                <small>Dịch vụ hỗ trợ</small>
-                            </Link>
+                            <i class="fa-solid fa-cart-flatbed-suitcase me-2"><sub><i class="fa-solid fa-circle-check"></i></sub></i>
+                            <small>Dịch vụ hỗ trợ</small>
                         </li>
                         <li className="nav-link active">
                             <i class="fa-solid fa-couch me-2"></i>

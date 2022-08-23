@@ -1,22 +1,5 @@
 .alooo {
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 30%;
-    bottom: 5%;
 }
-.img-hover-zoom1 {
-    overflow: hidden;
-    padding: 0 0px 0 0;
-  }
-  
-  .img-hover-zoom1 img {
-    /* transition: transform 0.5s ease-out; */
-    transition: all 0.7s ease; transition: all 0.7s ease;
-  }
-  .img-hover-zoom1:hover img {
-    /* transform: scale(1.2); */
-    transform: transform rotate(360deg); transform: rotate(360deg);
-  }
-
-
-

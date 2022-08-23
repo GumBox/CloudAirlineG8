@@ -38,17 +38,17 @@ export default function Header() {
                             </li>
 
                             <li>
-                                <Link to="infotravel" className="nav-link header-link">
+                                <Link to="#" className="nav-link header-link">
                                     Thông tin hành trình
                                 </Link>
                             </li>
                             <li>
-                                <Link to="servicemenu" className="nav-link header-link">
+                                <Link to="#" className="nav-link header-link">
                                     Dịch vụ
                                 </Link>
                             </li>
                             <li>
-                                <Link to="introduce" className="nav-link header-link">
+                                <Link to="#" className="nav-link header-link">
                                     Giới thiệu
                                 </Link>
                             </li>
