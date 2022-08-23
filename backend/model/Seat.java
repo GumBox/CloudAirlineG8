@@ -1,8 +1,10 @@
 
 package com.example.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,9 +26,9 @@ public class Seat {
     @Column( name = "seat_class" )
     private String seatClass;
 
-    @OneToOne
+    @OneToOne( mappedBy = "seat", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false )
     private Ticket ticket;
-    
+
     public Seat() {
 
         super();

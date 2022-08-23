@@ -12,7 +12,6 @@ import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Receipt;
 import com.example.demo.repository.ReceiptRepository;
 
-
 @RestController
 @RequestMapping( "/mainreceipt" )
 public class ReceiptController {
@@ -31,7 +30,8 @@ public class ReceiptController {
     public Receipt findReceiptById( @PathVariable long id ) {
 
         Receipt receipt = receiptRepository.findById(id).orElseThrow(
-                        () -> new ResourceNotFoundException("Can't found receipt with ID: " + id));
+                        () -> new ResourceNotFoundException(
+                                        "Can't found receipt with ID: " + id));
         return receipt;
 
     }
