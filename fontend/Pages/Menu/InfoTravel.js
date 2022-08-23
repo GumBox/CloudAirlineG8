@@ -25,13 +25,11 @@ function InfoTravel() {
                                         style={{ width: '100%' }}
                                     />
                                     <div class="card-body" style={{backgroundColor: "#f8f3e7"}}>
-                                        <a href="/question" class="card-button">
+                                        <a href="/checkin" class="card-button">
                                             <span class="title">LÀM THỦ TỤC</span>
                                         </a>
                                     </div></div>
                                     <br/>
-                                
-                            
                                 </div>
                                 <div className=" col-md-6">
                                     <div class="img-hover-zoom master-card">
@@ -42,40 +40,11 @@ function InfoTravel() {
                                         style={{ width: '100%' }}
                                     />
                                     <div class="card-body" style={{backgroundColor: "#f8f3e7"}}>
-                                        <a href="socialnetwork" class="card-button">
+                                        <a href="/baggage" class="card-button">
                                             <span class="title">THÔNG TIN HÀNH LÝ</span>
                                         </a>
                                     </div></div><br/>
                                 </div>
-                                <div className=" col-md-6">
-                                    <div class="img-hover-zoom master-card">
-                                    <img
-                                        src="https://www.vietnamairlines.com/~/media/Images/VNANew/Landingpage%20Mega%20Menu/Travel%20Information/travel-information_3.jpg"
-                                        alt=""
-                                        class="img1"
-                                        style={{ width: '100%' }}
-                                    />
-                                    <div class="card-body" style={{backgroundColor: "#f8f3e7"}}>
-                                        <a href="service_contact" class="card-button">
-                                            <span class="title">DỊCH VỤ ĐẶC BIỆT</span>
-                                        </a>
-                                    </div></div>
-                                </div>
-                                <div className=" col-md-6">
-                                    <div class="img-hover-zoom master-card">
-                                    <img
-                                        src="https://www.vietnamairlines.com/~/media/Images/VNANew/Landingpage%20Mega%20Menu/Travel%20Information/travel-information_4.jpg"
-                                        alt=""
-                                        class="img1"
-                                        style={{ width: '100%' }}
-                                    />
-                                    <div class="card-body" style={{backgroundColor: "#f8f3e7"}}>
-                                        <a href="contact" class="card-button">
-                                            <span class="title">SÂN BAY</span>
-                                        </a>
-                                    </div></div><br/>
-                                </div>
-                                    <br/>
                                     <div className=" col-md-6">
                                     <div class="img-hover-zoom master-card">
                                     <img
@@ -85,7 +54,7 @@ function InfoTravel() {
                                         style={{ width: '100%' }}
                                     />
                                     <div class="card-body" style={{backgroundColor: "#f8f3e7"}}>
-                                        <a href="contact" class="card-button">
+                                        <a href="/airport" class="card-button">
                                             <span class="title">YÊU CẦU GIẤY TỜ</span>
                                         </a>
                                     </div></div><br/>
