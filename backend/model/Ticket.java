@@ -3,7 +3,6 @@ package com.example.demo.model;
 import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,9 +29,9 @@ public class Ticket implements Serializable {
     @Column( name = "ticket_price" )
     private String ticketPrice;
 
-    @OneToOne( cascade = CascadeType.ALL )
-    @JoinColumn( name = "seat_id")
+    @OneToOne
     @JsonIgnore
+    @JoinColumn( name = "seat_id" )
     private Seat seat;
 
     @Column( name = "flight_date" )
@@ -53,5 +52,81 @@ public class Ticket implements Serializable {
     @ManyToOne
     @JoinColumn( name = "receipt_id" )
     private Receipt receipt;
+
+    public Ticket() { super(); }
+
+    
+    /**
+     * @return the customer
+     */
+    public Customer getCustomer() { return customer; }
+
+    
+    /**
+     * @param customer the customer to set
+     */
+    public void setCustomer( Customer customer ) { this.customer = customer; }
+
+
+    
+    /**
+     * @return the flightDate
+     */
+    public Date getFlightDate() { return flightDate; }
+
+
+    
+    /**
+     * @param flightDate the flightDate to set
+     */
+    public void setFlightDate( Date flightDate ) { this.flightDate = flightDate; }
+
+
+    
+    /**
+     * @return the place
+     */
+    public Place getPlace() { return place; }
+
+
+    
+    /**
+     * @param place the place to set
+     */
+    public void setPlace( Place place ) { this.place = place; }
+
+
+    
+    /**
+     * @return the receipt
+     */
+    public Receipt getReceipt() { return receipt; }
+
+
+    
+    /**
+     * @param receipt the receipt to set
+     */
+    public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
+
+
+    
+    /**
+     * @return the seat
+     */
+    public Seat getSeat() { return seat; }
+
+
+    
+    /**
+     * @param seat the seat to set
+     */
+    public void setSeat( Seat seat ) { this.seat = seat; }
+
+
+    
+    
+    
+
 
 }

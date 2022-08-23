@@ -83,4 +83,11 @@ public class Receipt implements Serializable {
      */
     public void setUsers( Users users ) { this.users = users; }
 
+    
+    /**
+     * @param receiptID the receiptID to set
+     */
+    public void setReceiptID( long receiptID ) { this.receiptID = receiptID; }
+
+    
 }
