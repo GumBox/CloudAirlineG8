@@ -153,7 +153,7 @@ function InfomationCustomer() {
 
                         </div>
                         <div className="col-md-12 mt-5 text-end">
-                            <Link to="">
+                            <Link to="/ticket/">
                                 <button className="btn btn-outline-primary back-button me-4">
                                     <i class="fa-solid fa-arrow-left-long text-black"></i>
                                 </button>

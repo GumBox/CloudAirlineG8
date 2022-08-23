@@ -13,15 +13,17 @@ function SupportServices() {
             <div className="tab-header bg-warning">
                 <div className="container">
                     <ul class="nav nav-pills nav-justified bg-warning">
-                        <Link to='ticket'>
+                        <Link to='/ticket/'>
                             <li class="nav-link" aria-current="page">
                                 <i class="fa-solid fa-plane-circle-check me-2" />
                                 <small>Xem lại chuyến bay</small>
                             </li>
                         </Link>
                         <li className="nav-link ">
-                            <i class="fa-solid fa-person-walking-luggage me-2" ><sub><i class="fa-solid fa-circle-check"></i></sub></i>
-                            <small>Thông tin khách</small>
+                            <Link to="/ticket/infcustomer/">
+                                <i class="fa-solid fa-person-walking-luggage me-2" ><sub><i class="fa-solid fa-circle-check"></i></sub></i>
+                                <small>Thông tin khách</small>
+                            </Link>
                         </li>
                         <li className="nav-link active">
                             <i class="fa-solid fa-cart-flatbed-suitcase me-2"></i>
@@ -129,7 +131,7 @@ function SupportServices() {
 
 
                 <div className=" mt-5 text-end  ">
-                    <Link to="#">
+                    <Link to="/ticket/infcustomer/">
                         <button className="btn btn-outline-primary back-button me-4">
                             <i class="fa-solid fa-arrow-left-long text-black"></i>
                         </button>
