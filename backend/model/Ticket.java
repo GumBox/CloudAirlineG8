@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Ticket implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "ticket_id" )
@@ -37,7 +38,7 @@ public class Ticket implements Serializable {
     @Column( name = "flight_date" )
     private Date flightDate;
 
-    @ManyToOne( fetch = FetchType.LAZY )
+    @ManyToOne
     @JoinColumn( name = "flight_id" )
     private Flight flight;
 
@@ -53,80 +54,40 @@ public class Ticket implements Serializable {
     @JoinColumn( name = "receipt_id" )
     private Receipt receipt;
 
-    public Ticket() { super(); }
+    public Ticket() {
 
-    
-    /**
-     * @return the customer
-     */
-    public Customer getCustomer() { return customer; }
+        super();
 
-    
-    /**
-     * @param customer the customer to set
-     */
-    public void setCustomer( Customer customer ) { this.customer = customer; }
+    }
 
+    public String getTicketPrice() { return ticketPrice; }
 
-    
-    /**
-     * @return the flightDate
-     */
-    public Date getFlightDate() { return flightDate; }
+    public void setTicketPrice( String ticketPrice ) { this.ticketPrice = ticketPrice; }
 
-
-    
-    /**
-     * @param flightDate the flightDate to set
-     */
-    public void setFlightDate( Date flightDate ) { this.flightDate = flightDate; }
-
-
-    
-    /**
-     * @return the place
-     */
-    public Place getPlace() { return place; }
-
-
-    
-    /**
-     * @param place the place to set
-     */
-    public void setPlace( Place place ) { this.place = place; }
-
-
-    
-    /**
-     * @return the receipt
-     */
-    public Receipt getReceipt() { return receipt; }
-
-
-    
-    /**
-     * @param receipt the receipt to set
-     */
-    public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
-
-
-    
-    /**
-     * @return the seat
-     */
     public Seat getSeat() { return seat; }
 
-
-    
-    /**
-     * @param seat the seat to set
-     */
     public void setSeat( Seat seat ) { this.seat = seat; }
 
+    public Date getFlightDate() { return flightDate; }
 
-    
-    
-    
+    public void setFlightDate( Date flightDate ) { this.flightDate = flightDate; }
 
+    public Flight getFlight() { return flight; }
+
+    public void setFlight( Flight flight ) { this.flight = flight; }
+
+    public Place getPlace() { return place; }
+
+    public void setPlace( Place place ) { this.place = place; }
+
+    public Customer getCustomer() { return customer; }
+
+    public void setCustomer( Customer customer ) { this.customer = customer; }
+
+    public Receipt getReceipt() { return receipt; }
+
+    public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
+
+    public long getTicketID() { return ticketID; }
 
 }
