@@ -5,7 +5,6 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -57,6 +56,20 @@ public class Ticket implements Serializable {
     public Ticket() {
 
         super();
+
+    }
+
+    public Ticket(String ticketPrice, Seat seat, Date flightDate, Flight flight, Place place,
+                    Customer customer, Receipt receipt) {
+
+        super();
+        this.ticketPrice = ticketPrice;
+        this.seat = seat;
+        this.flightDate = flightDate;
+        this.flight = flight;
+        this.place = place;
+        this.customer = customer;
+        this.receipt = receipt;
 
     }
 
