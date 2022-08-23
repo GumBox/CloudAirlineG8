@@ -32,7 +32,7 @@ export default function Header() {
                     <div class="collapse navbar-collapse" id="right-top-nav">
                         <ul class="navbar-nav ms-auto">
                             <li>
-                                <Link to="#" className="nav-link active header-link">
+                                <Link to="endow" className="nav-link active header-link">
                                     Ưu đãi
                                 </Link>
                             </li>

@@ -12,6 +12,8 @@ import Partner from "./Pages/Introduce/Partner"
 import TermsAndCondition from "./Pages/Rule/TermsAndCondition"
 import ProtectInf from "./Pages/Rule/ProtectInf";
 
+import Endow from "./Pages/Endow";
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
           <Route path="partner" element={< Partner />} />
           <Route path="termsandcondition" element={< TermsAndCondition />} />
           <Route path="protectinf" element={< ProtectInf />} />
+          <Route path="endow" element={<Endow />} />
         </Route>
       </Routes>
     </BrowserRouter>

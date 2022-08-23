@@ -5,16 +5,65 @@ import sv from '../images/service.jpg';
 import sv1 from '../images/service.png';
 import sv2 from '../images/service1.jpg';
 import logo from '../images/Logo.png';
-
-
 import banner from '../images/banner.png';
 import banner02 from '../images/Banner02.png';
 import banner03 from '../images/Banner03.png';
 import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+
+
+export default function Home() {
+
+    const [dataOfSeat, setDataOfSeat] = useState(null)
+    const [ticket, setTicket] = useState(null)
+
+    useEffect(() => {
+        fetch('http://localhost:8080/mainseat/seat/')
+            .then((res) => res.json())
+            .then((res) => {
+                setDataOfSeat(res)
+                console.log(res);
+            });
+
+        fetch('http://localhost:8080/mainticket/ticket/')
+            .then((response) => response.json())
+            .then((response) => {
+                setTicket(response)
+
+                console.log(response)
+            });
+    }, [])
+
+
+    var tickets = []
+    if (ticket != null) {
+
+        tickets = ticket.map((item) => {
+            return (
+                <option>
+                    {item.place.placeName}
+                </option>
+            )
+
+        })
+    }
+
+    var list = []
+    if (dataOfSeat !== null) {
+        list = dataOfSeat.map((item) => {
+
+            return (
+                <option>
+                    {item.seatClass}
+                </option>
+            )
+        })
+    }
 
 
 
-function Home() {
+
+
 
     return (
 
@@ -118,59 +167,19 @@ function Home() {
                         {/* BUY TICKET */}
                         <div class="collapse show" id="plane" data-bs-parent="#buyTicket">
                             <form className="row card-body" >
-                                <p className="col-sm-12 col-md-2  ">
-                                    Loại vé
-                                    <select name="ticketType" className="form-control"  >
-                                        <option name=" ">
-                                            Một chiều
-                                        </option>
 
-                                        <option name=" ">
-                                            Khứ hồi
-                                        </option>
-
-                                        <option name=" ">
-                                            Nhiều chặng
-                                        </option>
-
-
-                                    </select>
-                                </p>
-                                <p className="col-sm-10  col-md-2 ">
+                                <p className="col-sm-10  col-md-3 ">
                                     Điểm đi
 
                                     <select name="ticketType" className="form-control "  >
-                                        <option name=" ">
-                                            Hà Nội
-                                        </option>
-
-                                        <option name=" ">
-                                            TP.HCM
-                                        </option>
-
-                                        <option name=" ">
-                                            Vinh
-                                        </option>
-
-
+                                        {tickets}
                                     </select>
                                 </p>
-                                <p className="col-sm-10  col-md-2 ">
+                                <p className="col-sm-10  col-md-3 ">
                                     Điểm đến
 
                                     <select name="ticketType" className="form-control "  >
-                                        <option name=" ">
-                                            Hà Nội
-                                        </option>
-
-                                        <option name=" ">
-                                            TP.HCM
-                                        </option>
-
-                                        <option name=" ">
-                                            Vinh
-                                        </option>
-
+                                        {tickets}
 
                                     </select>
                                 </p>
@@ -456,7 +465,7 @@ function Home() {
                                     XUẤT HÓA ĐƠN ĐIỆN TỬ
                                 </p>
                                 <div className="collapse" id="electronicBill" data-bs-parent="#locationManagement" >
-                                    <form className="row card-body">
+                                    <form action="#" className="row card-body">
                                         <p className="col-sm-12 col-md-3">
                                             Họ tên:
                                             <input type="text" className="form-control" name="" placeholder="Họ tên" required />
@@ -504,130 +513,6 @@ function Home() {
 
                 <div className="container">
                     <hr />
-                    <div className="row ">
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className="price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className=" price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className=" price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className=" price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className=" price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className=" price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className=" price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3 mt-4">
-                            <div className="card ">
-                                <img src="https://assets.airtrfx.com/cdn-cgi/image/width=400,height=300,quality=80,format=auto/https://media.jtdwjcwq6f4wp4ce.com/library/cities/hanoi-HAN.jpg" />
-                                <p className="col-sm-12 col-md-6 h4">
-                                    TP. Hồ Chí Minh (SGN) đến
-                                    Hà Nội (HAN)
-                                </p>
-                                <p className=" price" >
-                                    839.480VND*<br />
-
-                                    Một chiều/Phổ thông
-                                </p>
-                                <button className=" btn btn-warning col-md-10 mb-3 text-white mx-auto" > Mua ngay</button>
-                            </div>
-                        </div>
-                    </div>
-
-
 
                     <p className="mx-auto text-center h4 mt-4">
                         CÁC DỊCH VỤ BỔ TRỢ
@@ -680,4 +565,4 @@ function Home() {
     )
 
 }
-export default Home;
+// export default Home
