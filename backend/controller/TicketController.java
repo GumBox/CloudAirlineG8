@@ -2,21 +2,22 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Ticket;
 import com.example.demo.repository.TicketRepository;
-import com.example.demo.service.TicketService;
 
 /*
  * Spring 4.0 @RestController annotation kết hợp cả @Controller và @ResponseBody bên
@@ -29,7 +30,7 @@ public class TicketController {
 
     @Autowired
     private TicketRepository ticketRepository;
-//    private TicketService ticketService;
+    // private TicketService ticketService;
 
     @GetMapping( value = "/ticket" )
     public List<Ticket> findAllTickets() {
@@ -39,13 +40,14 @@ public class TicketController {
     }
 
     @GetMapping( "/ticket/{id}" )
-    public Ticket findTicketById( @PathVariable long id ) {
+    public ResponseEntity<Ticket> findTicketById( @PathVariable long id ) {
 
-        Ticket ticket = ticketRepository.findById(id)
-                        .orElseThrow(() -> new ResourceNotFoundException(
-                                        "Can't found ticket with ID: " + id));
+        Optional<Ticket> ticket = ticketRepository.findById(id);
 
-        return ticket;
+        if (ticket.isPresent()) { return new ResponseEntity<>(ticket.get(), HttpStatus.OK); }
+        System.out.println("Get Mapping ID: " + id);
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
 
@@ -54,32 +56,35 @@ public class TicketController {
 
         Ticket createTicket = ticketRepository.save(new Ticket(ticket.getTicketPrice(),
                         ticket.getSeat(), ticket.getFlightDate(), ticket.getFlight(),
-                        ticket.getPlaceFrom(), ticket.getPlaceTo(), ticket.getCustomer(), ticket.getReceipt()));
+                        ticket.getPlaceFrom(), ticket.getPlaceTo(), ticket.getCustomer(),
+                        ticket.getReceipt()));
 
         return new ResponseEntity<>(createTicket, HttpStatus.CREATED);
 
     }
 
     @PutMapping( "/ticket/{id}" )
-    public ResponseEntity<Ticket> updateTicket( @PathVariable long id, Ticket ticket ) {
+    public ResponseEntity<Ticket> updateTicket( @PathVariable long id, @Validated @RequestBody Ticket ticket ) {
 
-        Ticket updateTicket = ticketRepository.findById(id)
-                        .orElseThrow(() -> new ResourceNotFoundException(
-                                        "Can't found ticket with ID: " + id));
+        Optional<Ticket> findTicket = ticketRepository.findById(id);
 
-        updateTicket.setTicketPrice(ticket.getTicketPrice());
-        updateTicket.setSeat(ticket.getSeat());
-        updateTicket.setFlightDate(ticket.getFlightDate());
-        updateTicket.setFlight(ticket.getFlight());
-        updateTicket.setPlaceFrom(ticket.getPlaceFrom());
-        updateTicket.setPlaceTo(ticket.getPlaceFrom());
+        if (findTicket.isPresent()) {
+            Ticket updateTicket = findTicket.get();
+            updateTicket.setTicketPrice(ticket.getTicketPrice());
+            updateTicket.setSeat(ticket.getSeat());
+            updateTicket.setFlightDate(ticket.getFlightDate());
+            updateTicket.setFlight(ticket.getFlight());
+            updateTicket.setPlaceFrom(ticket.getPlaceFrom());
+            updateTicket.setPlaceTo(ticket.getPlaceFrom());
+            updateTicket.setCustomer(ticket.getCustomer());
+            updateTicket.setReceipt(ticket.getReceipt());
 
-        updateTicket.setCustomer(null);
-        updateTicket.setReceipt(null);
+            return new ResponseEntity<>(ticketRepository.save(updateTicket), HttpStatus.OK);
+        }
 
-        ticketRepository.save(updateTicket);
+        System.out.println("PutMapping updateTicket ID: " + id);
 
-        return ResponseEntity.ok(updateTicket);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
 
