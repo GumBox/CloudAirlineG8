@@ -23,8 +23,8 @@ public class Place implements Serializable {
     @Column( name = "place_id" )
     private String placeID;
 
-    @Column( name = "place_name" )
-    private String placeName;
+    @Column( name = "place" )
+    private String place;
 
     @Column( name = "airport_name" )
     private String airportName;
@@ -39,9 +39,9 @@ public class Place implements Serializable {
 
     }
 
-    public String getPlaceName() { return placeName; }
+    public String getPlace() { return place; }
 
-    public void setPlaceName( String placeName ) { this.placeName = placeName; }
+    public void setPlace( String place ) { this.place = place; }
 
     public String getAirportName() { return airportName; }
 

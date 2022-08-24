@@ -6,7 +6,7 @@ import com.example.demo.model.Receipt;
 import com.example.demo.model.Ticket;
 
 public class UserServiceImp implements UserService {
-
+    
     @Override
     public List<Receipt> getAllReceipt() { return null; }
 
