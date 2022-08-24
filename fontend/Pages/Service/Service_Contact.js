@@ -17,13 +17,13 @@ function Service_Contact() {
 
                 </video>
                 <div className="col-md-5 alooo">
-                    <p className="h1 text-center ">
-                       LIÊN HỆ CLOUD AIRLINE
+                    <p className="h1 text-center text-white ">
+                        GỬI THƯ ĐIỆN TỬ CHO CLOUD AIRLINE
                     </p>
                     <div className="card">
                         <div className="card-header">
                             <p className="text-success text-center h3">
-                            Liên hệ Cloud Airline
+                                Gửi Thư Cho Cloud Airline
                             </p>
 
                             <div className="card-body">
@@ -33,7 +33,14 @@ function Service_Contact() {
                                             <td className="col-md-4 my-3">Thông tin liên hệ</td>
 
                                             <td className="col-md-4 my-3">
-                                                <input type="text" className="form-control"></input>
+                                                <select className="form-control" placeholder="Danh xưng">
+                                                    <option selected>
+                                                        Ông
+                                                    </option>
+                                                    <option >
+                                                        Bà
+                                                    </option>
+                                                </select>
                                             </td>
                                             <td className="col-md-4 my-3">
                                                 <input type="text" className="form-control" placeholder="Mã quốc gia" />
@@ -82,7 +89,9 @@ function Service_Contact() {
                                             <td className="col-md-4"></td>
                                             <td className="col-md-8">Các trường đánh dấu (*) là bắt buộc</td>
                                         </tr>
+
                                     </table>
+                                    <input type="submit" className="btn btn-danger float-end" value="Gửi" ></input>
                                 </form>
                             </div>
                         </div>
