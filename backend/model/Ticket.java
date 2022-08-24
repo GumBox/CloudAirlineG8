@@ -42,8 +42,12 @@ public class Ticket implements Serializable {
     private Flight flight;
 
     @ManyToOne
-    @JoinColumn( name = "place_id" )
-    private Place place;
+    @JoinColumn( name = "id_place_from" )
+    private Place placeFrom;
+
+    @ManyToOne
+    @JoinColumn( name = "id_place_to" )
+    private Place placeTo;
 
     @ManyToOne
     @JoinColumn( name = "customer_id" )
@@ -59,15 +63,16 @@ public class Ticket implements Serializable {
 
     }
 
-    public Ticket(String ticketPrice, Seat seat, Date flightDate, Flight flight, Place place,
-                    Customer customer, Receipt receipt) {
+    public Ticket(String ticketPrice, Seat seat, Date flightDate, Flight flight,
+                    Place placeFrom, Place placeTo, Customer customer, Receipt receipt) {
 
         super();
         this.ticketPrice = ticketPrice;
         this.seat = seat;
         this.flightDate = flightDate;
         this.flight = flight;
-        this.place = place;
+        this.placeFrom = placeFrom;
+        this.placeTo = placeTo;
         this.customer = customer;
         this.receipt = receipt;
 
@@ -89,9 +94,13 @@ public class Ticket implements Serializable {
 
     public void setFlight( Flight flight ) { this.flight = flight; }
 
-    public Place getPlace() { return place; }
+    public Place getPlaceFrom() { return placeFrom; }
 
-    public void setPlace( Place place ) { this.place = place; }
+    public void setPlaceFrom( Place placeFrom ) { this.placeFrom = placeFrom; }
+
+    public Place getPlaceTo() { return placeTo; }
+
+    public void setPlaceTo( Place placeTo ) { this.placeTo = placeTo; }
 
     public Customer getCustomer() { return customer; }
 
