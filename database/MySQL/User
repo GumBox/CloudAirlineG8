@@ -18,3 +18,4 @@ insert into users (user_id, full_name, gender, address, phone, email) values (17
 insert into users (user_id, full_name, gender, address, phone, email) values (18, 'Brandice Waine', 1, '1 Shasta Terrace', '0412994087', 'bwaineh@miibeian.gov.cn');
 insert into users (user_id, full_name, gender, address, phone, email) values (19, 'Mireielle Scudders', 1, '140 Sugar Pass', '0418254712', 'mscuddersi@apache.org');
 insert into users (user_id, full_name, gender, address, phone, email) values (20, 'Hyatt Wateridge', 0, '939 Del Mar Circle', '0241652892', 'hwateridgej@w3.org');
+

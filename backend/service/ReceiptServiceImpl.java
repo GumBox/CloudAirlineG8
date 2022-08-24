@@ -27,7 +27,7 @@ public class ReceiptServiceImpl implements ReceiptService {
         if (optional.isPresent()) {
             receipt = optional.get();
         } else {
-            throw new RuntimeException("Hóa đơn không thấy với mã: " + id);
+            throw new RuntimeException("Can't Found ID: " + id);
         }
         return receipt;
 

@@ -33,4 +33,28 @@ public class Place implements Serializable {
     @JsonIgnore
     private Set<Ticket> lstTicketPlace;
 
+    public Place() {
+
+        super();
+
+    }
+
+    public String getPlaceName() { return placeName; }
+
+    public void setPlaceName( String placeName ) { this.placeName = placeName; }
+
+    public String getAirportName() { return airportName; }
+
+    public void setAirportName( String airportName ) { this.airportName = airportName; }
+
+    public Set<Ticket> getLstTicketPlace() { return lstTicketPlace; }
+
+    public void setLstTicketPlace( Set<Ticket> lstTicketPlace ) {
+
+        this.lstTicketPlace = lstTicketPlace;
+
+    }
+
+    public String getPlaceID() { return placeID; }
+
 }

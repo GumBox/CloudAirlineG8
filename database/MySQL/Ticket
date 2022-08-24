@@ -11,7 +11,7 @@ insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, pl
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (11, '2021-08-27', 39, 11, 11, 'UIH', 11, 11);
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (12, '2022-03-30', 49, 12, 12, 'VCL', 12, 12);
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (13, '2022-08-04', 30,13, 13, 'VCS', 13, 13);
-insert into ticket (ticket_id,flight_date,  ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (14, '2021-11-19', 32, 14, 14, 'VDH', 14, 14);
+insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (14, '2021-11-19', 32, 14, 14, 'VDH', 14, 14);
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (15, '2022-08-07', 13, 15, 15, 'VKG', 15, 15);
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (16, '2022-07-18', 10, 16, 16, 'VKG', 16, 16);
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, place_id,  customer_id, receipt_id) values (17, '2022-02-04', 19, 17,  17, 'THD', 17, 17);

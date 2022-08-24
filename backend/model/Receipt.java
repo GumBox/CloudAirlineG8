@@ -28,10 +28,10 @@ public class Receipt implements Serializable {
 
     @Column( name = "receipt_buying_date" )
     private Date receiptBuyingDate;
-    
-    @Column( name = "total_price")
+
+    @Column( name = "total_price" )
     private long totalPrice;
-    
+
     @ManyToOne
     @JoinColumn( name = "user_id" )
     private Users users;
@@ -46,41 +46,26 @@ public class Receipt implements Serializable {
 
     }
 
-    public Receipt(Date receiptBuyingDate, Users users) {
-
-        super();
-        this.receiptBuyingDate = receiptBuyingDate;
-        this.users = users;
-
-    }
-
-    /**
-     * @return the receiptID
-     */
-    public long getReceiptID() { return receiptID; }
-
-    /**
-     * @return the receiptBuyingDate
-     */
     public Date getReceiptBuyingDate() { return receiptBuyingDate; }
 
-    /**
-     * @param receiptBuyingDate the receiptBuyingDate to set
-     */
     public void setReceiptBuyingDate( Date receiptBuyingDate ) {
 
         this.receiptBuyingDate = receiptBuyingDate;
 
     }
 
-    /**
-     * @return the users
-     */
+    public long getTotalPrice() { return totalPrice; }
+
+    public void setTotalPrice( long totalPrice ) { this.totalPrice = totalPrice; }
+
     public Users getUsers() { return users; }
 
-    /**
-     * @param users the users to set
-     */
     public void setUsers( Users users ) { this.users = users; }
+
+    public List<Ticket> getLstTicket() { return lstTicket; }
+
+    public void setLstTicket( List<Ticket> lstTicket ) { this.lstTicket = lstTicket; }
+
+    public long getReceiptID() { return receiptID; }
 
 }
