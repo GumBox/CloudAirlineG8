@@ -9,13 +9,13 @@ import banner from '../images/banner.png';
 import banner02 from '../images/Banner02.png';
 import banner03 from '../images/Banner03.png';
 import { Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from "react";
 
 
 export default function Home() {
 
     const [dataOfSeat, setDataOfSeat] = useState(null)
-    const [ticket, setTicket] = useState(null)
+    const [placeName, setPlaceName] = useState(null)
 
     useEffect(() => {
         fetch('http://localhost:8080/mainseat/seat/')
@@ -25,36 +25,36 @@ export default function Home() {
                 console.log(res);
             });
 
-        fetch('http://localhost:8080/mainticket/ticket/')
+        fetch('http://localhost:8080/mainticket/ticket')
             .then((response) => response.json())
             .then((response) => {
-                setTicket(response)
-
+                setPlaceName(response)
                 console.log(response)
             });
     }, [])
 
 
-    var tickets = []
-    if (ticket != null) {
+    var placesFrom = []
+    if (placeName != null) {
 
-        tickets = ticket.map((item) => {
+        placesFrom = placeName.map((item) => {
             return (
                 <option>
-                    {item.place.placeName}
+                    {item.placeFrom.place}
                 </option>
             )
 
         })
     }
 
-    var list = []
-    if (dataOfSeat !== null) {
-        list = dataOfSeat.map((item) => {
+    var placesTo = []
+    if (placeName !== null) {
+        placesTo = placeName.map((item) => {
 
             return (
+
                 <option>
-                    {item.seatClass}
+                    {item.placeTo.place}
                 </option>
             )
         })
@@ -164,6 +164,7 @@ export default function Home() {
                             </li>
                         </ul>
 
+
                         {/* BUY TICKET */}
                         <div class="collapse show" id="plane" data-bs-parent="#buyTicket">
                             <form className="row card-body" >
@@ -172,14 +173,14 @@ export default function Home() {
                                     Điểm đi
 
                                     <select name="ticketType" className="form-control "  >
-                                        {tickets}
+                                        {placesFrom}
                                     </select>
                                 </p>
                                 <p className="col-sm-10  col-md-3 ">
                                     Điểm đến
 
                                     <select name="ticketType" className="form-control "  >
-                                        {tickets}
+                                        {placesTo}
 
                                     </select>
                                 </p>
@@ -244,7 +245,7 @@ export default function Home() {
                                     <span class="badge rounded-pill bg-primary opacity-75">Số vé điện tử</span>
                                     <form className="card-body row">
                                         <p className="col-sm-10 col-md-5">
-                                            <input type="text" className="form-control" name="" placeholder="Số vé điện tử (738xxxxxxxxxx)" />
+                                            <input type="text" className="form-control" name="" placeholder="Số vé điện tử (738xxxxx)" />
                                         </p>
                                         <p className="col-sm-10 col-md-5">
                                             <input type="text" className="form-control" name="" placeholder="Họ" />
@@ -285,7 +286,7 @@ export default function Home() {
                                     </p>
                                     <img src={pay} className="col-md-12" />
                                     <p>
-                                        * Chỉ áp dụng các mã đặt chỗ trả sau được đặt tại website www.vietnamairlines.com hoặc ứng dụng di động Vietnam Airlines.
+                                        * Chỉ áp dụng các mã đặt chỗ trả sau được đặt tại website www.cloudairlines.com hoặc ứng dụng di động Cloud Airlines.
                                     </p>
 
 
