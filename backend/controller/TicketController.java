@@ -20,8 +20,7 @@ import com.example.demo.model.Ticket;
 import com.example.demo.repository.TicketRepository;
 
 /*
- * Spring 4.0 @RestController annotation kết hợp cả @Controller và @ResponseBody bên
- * trong
+ * Spring 4.0 @RestController annotation combine @Controller và @ResponseBody
  * 
  */
 @RestController
@@ -33,9 +32,10 @@ public class TicketController {
     // private TicketService ticketService;
 
     @GetMapping( value = "/ticket" )
-    public List<Ticket> findAllTickets() {
+    public ResponseEntity<List<Ticket>> findAllTickets() {
 
-        return ticketRepository.findAll();
+        System.out.println("getmapping");
+        return new ResponseEntity<>(ticketRepository.findAll(), HttpStatus.OK);
 
     }
 
@@ -44,7 +44,9 @@ public class TicketController {
 
         Optional<Ticket> ticket = ticketRepository.findById(id);
 
-        if (ticket.isPresent()) { return new ResponseEntity<>(ticket.get(), HttpStatus.OK); }
+        if (ticket.isPresent()) {
+            return new ResponseEntity<>(ticket.get(), HttpStatus.OK);
+        }
         System.out.println("Get Mapping ID: " + id);
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -64,7 +66,8 @@ public class TicketController {
     }
 
     @PutMapping( "/ticket/{id}" )
-    public ResponseEntity<Ticket> updateTicket( @PathVariable String id, @Validated @RequestBody Ticket ticket ) {
+    public ResponseEntity<Ticket> updateTicket( @PathVariable String id,
+                    @Validated @RequestBody Ticket ticket ) {
 
         Optional<Ticket> findTicket = ticketRepository.findById(id);
 
@@ -79,7 +82,8 @@ public class TicketController {
             updateTicket.setCustomer(ticket.getCustomer());
             updateTicket.setReceipt(ticket.getReceipt());
 
-            return new ResponseEntity<>(ticketRepository.save(updateTicket), HttpStatus.OK);
+            return new ResponseEntity<>(ticketRepository.save(updateTicket),
+                            HttpStatus.OK);
         }
 
         System.out.println("PutMapping updateTicket ID: " + id);

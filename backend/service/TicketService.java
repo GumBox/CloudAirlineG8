@@ -4,6 +4,6 @@ import com.example.demo.model.Ticket;
 
 public interface TicketService {
 
-    Ticket ticket();
+    Ticket findTicket(String ticket);
 
 }

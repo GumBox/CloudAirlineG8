@@ -14,8 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table( name = "ticket" )
-public class Ticket  {
-
+public class Ticket {
 
     @Id
     @Column( name = "ticket_id" )

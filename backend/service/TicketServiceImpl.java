@@ -13,10 +13,8 @@ public class TicketServiceImpl implements TicketService {
     private TicketRepository ticketRepository;
 
     @Override
-    public Ticket ticket() {
+    public Ticket findTicket( String ticket ) { return null; }
 
-        return null;
-
-    }
+   
 
 }

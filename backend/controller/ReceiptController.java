@@ -36,7 +36,9 @@ public class ReceiptController {
 
         Optional<Receipt> receipt = receiptRepository.findById(id);
 
-        if (receipt.isPresent()) { return new ResponseEntity<>(receipt.get(), HttpStatus.OK); }
+        if (receipt.isPresent()) {
+            return new ResponseEntity<>(receipt.get(), HttpStatus.OK);
+        }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
@@ -53,7 +55,8 @@ public class ReceiptController {
             updateReceipt.setReceiptBuyingDate(receipt.getReceiptBuyingDate());
             updateReceipt.setLstTicket(receipt.getLstTicket());
 
-            return new ResponseEntity<>(receiptRepository.save(updateReceipt), HttpStatus.OK);
+            return new ResponseEntity<>(receiptRepository.save(updateReceipt),
+                            HttpStatus.OK);
         }
 
         System.out.println("PutMapping update Receipt ID: " + id);
