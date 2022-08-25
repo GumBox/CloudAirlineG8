@@ -1,15 +1,95 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../../Css/InfomationCustomer.css';
-
+import { useForm, Controller } from 'react-hook-form';
+import { useState, useEffect } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
 
 function InfomationCustomer() {
 
 
+
+    const onSubmit = (data) => console.log(data);
+    const [user, setUser] = useState(null);
+    let navigate = useNavigate();
+    const {
+        register,
+        handleSubmit,
+        watch,
+        label,
+        required,
+
+
+    } = useForm();
+
+    const handleChange = (event) => {
+        console.log(event);
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
+        console.log(name);
+        let data = { ...user };
+        data[name] = value;
+
+        if (name == 'gender') {
+            data[name] = str2bool(value);
+            console.log('gender');
+            console.log(data[name]);
+        }
+
+        console.log(data);
+        setUser(data);
+        if (name == 'nickName') {
+            data[name] = nkName(value);
+            console.log('nickName');
+            console.log(data[name]);
+        }
+        console.log(data);
+        setUser(data);
+    };
+    var str2bool = (value) => {
+        if (value && typeof value === 'string') {
+            if (value.toLowerCase() === 'true') return 'nữ';
+            if (value.toLowerCase() === 'false') return 'nam';
+        }
+        return value;
+    };
+
+
+
+    const saveUser = () => {
+        console.log('save data', user);
+        let method = 'POST';
+        let id = '';
+
+        const requestOptions = {
+            method: method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user),
+        };
+        fetch(
+            'https://62bafae8573ca8f832901b9c.mockapi.io/user' + id,
+            requestOptions
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                navigate(1);
+            });
+    };
+    var nkName = (value) => {
+        if (value && typeof value === 'string') {
+            if (value.toLowerCase() === '0') return 'Anh/Chị';
+            if (value.toLowerCase() === '1') return 'Cô/Chú';
+            if (value.toLowerCase() === '2') return 'Ông/Bà';
+        }
+        return value;
+    }
     return (
         <>
+
             <div className="tab-header bg-warning">
                 <div className="container">
                     <ul class="nav nav-pills nav-justified bg-warning">
@@ -47,8 +127,7 @@ function InfomationCustomer() {
                 <div className="card" id="oke">
                     <p className="card-body">
                         Dữ liệu cá nhân của Quý khách thu thập trên trang này được xử lý và lưu trữ bởi Cloud Airline cho mục đích và theo điều kiện đã được công bố tại Chính sách bảo mật thông tin của Cloud Airlines.<br />
-                        Để tìm hiểu thêm về việc cách thức xử lý dữ liệu cá nhân của Quý khách và về các quyền của Quý khách (Quyền yêu cầu cung cấp thông tin, Quyền sửa đổi thông tin…), vui lòng đọc và chấp nhận
-                        <Link to='#'>
+                        Để tìm hiểu thêm về việc cách thức xử lý dữ liệu cá nhân của Quý khách và về các quyền của Quý khách (Quyền yêu cầu cung cấp thông tin, Quyền sửa đổi thông tin…), vui lòng đọc và chấp nhận <Link to='#'>
                             Chính sách bảo mật thông tin
                         </Link> của chúng tôi.
 
@@ -74,35 +153,52 @@ function InfomationCustomer() {
                                     Lưu ý: * Trường bắt buộc nhập thông tin
                                 </p>
 
-                                <form className="row" >
+                                <form className="row" onSubmit={handleSubmit(onSubmit)}
+                                    action="https://62bafae8573ca8f832901b9c.mockapi.io/user"
+                                    method="POST" >
                                     <p className="h5 mb-4">
                                         Thông tin cơ bản
                                     </p>
                                     <div class="form-floating mb-3 col-sm-12 col-md-2">
-                                        <select class="form-select" id="nickName" placeholder="Danh xưng">
-                                            <option value="0">Anh/Chị</option>
+                                        <select class="form-select" id="nickName" name="nickName" placeholder="Danh xưng"
+                                            {...register('nickName', { required: true })} onChange={(e) => handleChange(e)} >
+                                            <option value="0"  >Anh/Chị</option>
                                             <option value="1">Cô/Chú</option>
                                             <option value="2">Ông/Bà</option>
                                         </select>
                                         <label className="ms-2" for="nickName" style={{ opacity: .75 }}>Danh xưng *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-5">
-                                        <input type="text" class="form-control" id="lastName" placeholder="Tên Đệm và Tên" required />
+                                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Tên Đệm và Tên"
+                                            {...register('lastName', { required: true })} onChange={(e) => handleChange(e)} />
                                         <label className="ms-2" for="lastName" style={{ opacity: .75 }}>Tên Đệm và Tên *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-5">
-                                        <input type="text" class="form-control" id="firstName" placeholder="Họ" required />
+                                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Họ"
+                                            {...register('firstName', { required: true })} onChange={(e) => handleChange(e)} />
                                         <label className="ms-2" for="firstName" style={{ opacity: .75 }}>Họ *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6">
-                                        <input type="text" class="form-control" id="dob" placeholder="Giới tính" required />
+                                        <input type="date" class="form-control" id="dob" name="dob" placeholder="dob"
+                                            {...register('dob', { required: true })} onChange={(e) => handleChange(e)} />
                                         <label className="ms-2" for="dob" style={{ opacity: .75 }}>Ngày Tháng Năm sinh *</label>
                                     </div>
-                                    <div class="form-floating col-sm-12 col-md-6">
-                                        <input type="text" class="form-control" id="sex" placeholder="Giới tính" required />
-                                        <label className="ms-2" for="sex" style={{ opacity: .75 }}>Giới tính *</label>
+                                    <div class="form-check col-sm-12 col-md-6">
+                                        <p style={{ opacity: .75 }}>
+                                            Giới Tính *
+                                        </p>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="female" value="true" checked
+                                                {...register('gender', { required: true })} onChange={(e) => handleChange(e)} />
+                                            <label class="form-check-label" for="female">Nữ</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="male" value="false"
+                                                {...register('gender', { required: true })} onChange={(e) => handleChange(e)} />
+                                            <label class="form-check-label" for="male">Nam</label>
+                                        </div>
                                     </div>
-                                    <div class="form-check mt-2 ms-3">
+                                    <div class=" form-check mt-2 ms-3">
                                         <input class="form-check-input" type="checkbox" value="" id="ckeck" />
                                         <label class="form-check-label" for="check">
                                             Lưu thông tin đăng nhập
@@ -112,27 +208,30 @@ function InfomationCustomer() {
                                     <hr className="text-success my-3"></hr>
 
                                     <p className="h5 mb-4">
+
                                         Thông tin liên hệ
                                     </p>
 
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="numberPhone" placeholder="Sos điện thoại " required />
+                                        <input type="text" class="form-control" id="numberPhone" name="numberPhone" placeholder="Sos điện thoại "
+                                            {...register('numberPhone', { required: true, maxLength: 10, minLength: 10 })} onChange={(e) => handleChange(e)} />
                                         <label className="ms-2" for="numberPhone" style={{ opacity: .75 }}>Số điện thoại *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="numberPhone" placeholder="Sos điện thoại " required />
+                                        <input type="text" class="form-control" id="numberPhone" name="numberPhone2" placeholder="Sos điện thoại " />
                                         <label className="ms-2" for="numberPhone" style={{ opacity: .75 }}>Số điện thoại 2 </label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Email " required />
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email "
+                                            {...register('email', { required: true })} onChange={(e) => handleChange(e)} />
                                         <label className="ms-2" for="email" style={{ opacity: .75 }}>Email *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Email " required />
-                                        <label className="ms-2" for="email" style={{ opacity: .75 }}>Email </label>
+                                        <input type="email" class="form-control" id="email" name="email2" placeholder="Email " />
+                                        <label className="ms-2" for="email" style={{ opacity: .75 }}>Email2 </label>
                                     </div>
                                     <div class="form-check ">
-                                        <input class="form-check-input" type="checkbox" value="" id="ckeck" required />
+                                        <input class="form-check-input" type="checkbox" value="" id="ckeck" {...{ required: true }} />
                                         <label class="form-check-label" for="check">
                                             <small>
                                                 Tôi đồng ý nhận các thông ti quảng cáo qua email được nêu chi tiết trong
@@ -143,7 +242,10 @@ function InfomationCustomer() {
                                         </label>
                                     </div>
                                     <div className="mt-3 ">
-                                        <input type="submit" value="Hoàn thành" className="float-end btn btn-danger"></input>
+                                        <input type="submit" value="Hoàn thành" className="float-end btn btn-danger"
+                                            onClick={(e) => saveUser()
+                                            }
+                                        ></input>
                                     </div>
 
                                 </form>
