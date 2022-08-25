@@ -10,20 +10,36 @@ import banner02 from '../images/Banner02.png';
 import banner03 from '../images/Banner03.png';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import { useForm, Controller } from 'react-hook-form';
 
 export default function Home() {
 
-    const [dataOfSeat, setDataOfSeat] = useState(null)
+
     const [placeName, setPlaceName] = useState(null)
+    const onSubmit = (data) => console.log(data);
+    const {
+        register,
+        handleSubmit,
+        watch,
+        label,
+        required,
+
+
+    } = useForm();
+
+    const handleChange = (event) => {
+        console.log(event);
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
+        console.log(name);
+        let data = { ...placeName };
+        data[name] = value;
+    };
+
 
     useEffect(() => {
-        fetch('http://localhost:8080/mainseat/seat/')
-            .then((res) => res.json())
-            .then((res) => {
-                setDataOfSeat(res)
-                console.log(res);
-            });
 
         fetch('http://localhost:8080/mainticket/ticket')
             .then((response) => response.json())
@@ -39,7 +55,8 @@ export default function Home() {
 
         placesFrom = placeName.map((item) => {
             return (
-                <option>
+
+                <option value={item.placeTo.place}>
                     {item.placeFrom.place}
                 </option>
             )
@@ -53,7 +70,7 @@ export default function Home() {
 
             return (
 
-                <option>
+                <option >
                     {item.placeTo.place}
                 </option>
             )
@@ -65,10 +82,10 @@ export default function Home() {
 
 
 
+
     return (
 
         <>
-
             <div>
                 {/* Banner */}
 
@@ -167,12 +184,15 @@ export default function Home() {
 
                         {/* BUY TICKET */}
                         <div class="collapse show" id="plane" data-bs-parent="#buyTicket">
-                            <form className="row card-body" >
+                            <form className="row card-body" action="https://62bafae8573ca8f832901b9c.mockapi.io/user" method="GET"
+                                onSubmit={handleSubmit(onSubmit)}
+                            >
 
                                 <p className="col-sm-10  col-md-3 ">
                                     Điểm đi
 
-                                    <select name="ticketType" className="form-control "  >
+                                    <select className="form-control "
+                                        {...register('ticketType', { required: true })} onChange={(e) => handleChange(e)} >
                                         {placesFrom}
                                     </select>
                                 </p>

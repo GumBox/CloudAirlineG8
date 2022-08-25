@@ -3,19 +3,24 @@ import { Link } from "react-router-dom";
 import '../../Css/InfomationCustomer.css';
 import { useForm, Controller } from 'react-hook-form';
 import { useState, useEffect } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
+
 
 
 function InfomationCustomer() {
 
-    const [user, setUser] = useState(null);
 
+
+    const onSubmit = (data) => console.log(data);
+    const [user, setUser] = useState(null);
+    let navigate = useNavigate();
     const {
         register,
         handleSubmit,
         watch,
         label,
         required,
-        formState: { errors },
+
 
     } = useForm();
 
@@ -52,6 +57,28 @@ function InfomationCustomer() {
         }
         return value;
     };
+
+
+
+    const saveUser = () => {
+        console.log('save data', user);
+        let method = 'POST';
+        let id = '';
+
+        const requestOptions = {
+            method: method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user),
+        };
+        fetch(
+            'https://62bafae8573ca8f832901b9c.mockapi.io/user' + id,
+            requestOptions
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                navigate(1);
+            });
+    };
     var nkName = (value) => {
         if (value && typeof value === 'string') {
             if (value.toLowerCase() === '0') return 'Anh/Chị';
@@ -62,6 +89,7 @@ function InfomationCustomer() {
     }
     return (
         <>
+
             <div className="tab-header bg-warning">
                 <div className="container">
                     <ul class="nav nav-pills nav-justified bg-warning">
@@ -125,7 +153,9 @@ function InfomationCustomer() {
                                     Lưu ý: * Trường bắt buộc nhập thông tin
                                 </p>
 
-                                <form className="row" >
+                                <form className="row" onSubmit={handleSubmit(onSubmit)}
+                                    action="https://62bafae8573ca8f832901b9c.mockapi.io/user"
+                                    method="POST" >
                                     <p className="h5 mb-4">
                                         Thông tin cơ bản
                                     </p>
@@ -178,12 +208,13 @@ function InfomationCustomer() {
                                     <hr className="text-success my-3"></hr>
 
                                     <p className="h5 mb-4">
+
                                         Thông tin liên hệ
                                     </p>
 
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
                                         <input type="text" class="form-control" id="numberPhone" name="numberPhone" placeholder="Sos điện thoại "
-                                            {...register('gender', { required: true })} onChange={(e) => handleChange(e)} />
+                                            {...register('numberPhone', { required: true, maxLength: 10, minLength: 10 })} onChange={(e) => handleChange(e)} />
                                         <label className="ms-2" for="numberPhone" style={{ opacity: .75 }}>Số điện thoại *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
@@ -191,7 +222,8 @@ function InfomationCustomer() {
                                         <label className="ms-2" for="numberPhone" style={{ opacity: .75 }}>Số điện thoại 2 </label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email " />
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email "
+                                            {...register('email', { required: true })} onChange={(e) => handleChange(e)} />
                                         <label className="ms-2" for="email" style={{ opacity: .75 }}>Email *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
@@ -199,7 +231,7 @@ function InfomationCustomer() {
                                         <label className="ms-2" for="email" style={{ opacity: .75 }}>Email2 </label>
                                     </div>
                                     <div class="form-check ">
-                                        <input class="form-check-input" type="checkbox" value="" id="ckeck" />
+                                        <input class="form-check-input" type="checkbox" value="" id="ckeck" {...{ required: true }} />
                                         <label class="form-check-label" for="check">
                                             <small>
                                                 Tôi đồng ý nhận các thông ti quảng cáo qua email được nêu chi tiết trong
@@ -210,7 +242,10 @@ function InfomationCustomer() {
                                         </label>
                                     </div>
                                     <div className="mt-3 ">
-                                        <input type="submit" value="Hoàn thành" className="float-end btn btn-danger"></input>
+                                        <input type="submit" value="Hoàn thành" className="float-end btn btn-danger"
+                                            onClick={(e) => saveUser()
+                                            }
+                                        ></input>
                                     </div>
 
                                 </form>

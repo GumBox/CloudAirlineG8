@@ -113,7 +113,7 @@ const Endow = () => {
                         <p className="h1 text-center endow-title my-5">
                             LỢI ÍCH CỦA VIỆC ĐẶT VÉ TRỰC TUYẾN
                         </p>
-                        <div className="row">
+                        <div className="row text-center">
                             <div className="col-md-4 bgr-icon-endow">
                                 <p>
                                     <i class="icon-endow fa-solid fa-plane-up rounded-circle border border-primary"></i>
@@ -143,7 +143,7 @@ const Endow = () => {
                                 <p className="h5">
                                     Giá vé tốt nhất
                                 </p>
-                                <p >
+                                <p>
                                     Giá tốt kèm nhiều ưu đãi đặc biệt chỉ có trên kênh đặt vé trực tuyến Cloud Airline
                                 </p>
                             </div>
