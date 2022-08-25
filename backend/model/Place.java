@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,9 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table( name = "place" )
-public class Place implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Place {
 
     @Id
     @Column( name = "place_id" )
@@ -36,6 +33,15 @@ public class Place implements Serializable {
     public Place() {
 
         super();
+
+    }
+
+    
+    public Place(String place, String airportName) {
+
+        super();
+        this.place = place;
+        this.airportName = airportName;
 
     }
 

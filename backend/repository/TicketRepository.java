@@ -8,6 +8,6 @@ import com.example.demo.model.Ticket;
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket, String> {
 
-   
     
+
 }
