@@ -28,7 +28,7 @@ public class Customer implements Serializable {
     @Column( name = "full_name" )
     private String fullName;
 
-    private boolean gender;
+    private String gender;
 
     private String address;
 
@@ -50,9 +50,9 @@ public class Customer implements Serializable {
 
     public void setFullName( String fullName ) { this.fullName = fullName; }
 
-    public boolean isGender() { return gender; }
+    public String isGender() { return gender; }
 
-    public void setGender( boolean gender ) { this.gender = gender; }
+    public void setGender( String gender ) { this.gender = gender; }
 
     public String getAddress() { return address; }
 
