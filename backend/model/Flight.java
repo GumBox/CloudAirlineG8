@@ -19,14 +19,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table( name = "flight" )
-public class Flight implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Flight {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "flight_id" )
-    private long flightID;
+    private String flightID;
 
     @Column( name = "time_from" )
     private Time timeFrom;
@@ -68,6 +65,6 @@ public class Flight implements Serializable {
 
     public void setPlane( Plane plane ) { this.plane = plane; }
 
-    public long getFlightID() { return flightID; }
+    public String getFlightID() { return flightID; }
 
 }

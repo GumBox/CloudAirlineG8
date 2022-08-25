@@ -1,12 +1,9 @@
 package com.example.demo.model;
 
-import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,14 +14,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table( name = "ticket" )
-public class Ticket implements Serializable {
+public class Ticket  {
 
-    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "ticket_id" )
-    private long ticketID;
+    private String ticketID;
 
     @Column( name = "ticket_price" )
     private String ticketPrice;
@@ -110,6 +105,6 @@ public class Ticket implements Serializable {
 
     public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
 
-    public long getTicketID() { return ticketID; }
+    public String getTicketID() { return ticketID; }
 
 }

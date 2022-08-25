@@ -5,8 +5,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -16,9 +14,8 @@ import javax.persistence.Table;
 public class Seat {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "seat_id" )
-    private long seatID;
+    private String seatID;
 
     @Column( name = "seat_number" )
     private int seatNumber;
@@ -47,6 +44,6 @@ public class Seat {
 
     public void setTicket( Ticket ticket ) { this.ticket = ticket; }
 
-    public long getSeatID() { return seatID; }
+    public String getSeatID() { return seatID; }
 
 }

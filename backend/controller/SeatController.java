@@ -32,7 +32,7 @@ public class SeatController {
     }
 
     @GetMapping( "/seat/{id}" )
-    public Seat findTicketById( @PathVariable long id ) {
+    public Seat findTicketById( @PathVariable String id ) {
 
         Seat seat = seatRepository.findById(id)
                         .orElseThrow(() -> new ResourceNotFoundException(
