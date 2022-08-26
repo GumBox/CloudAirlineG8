@@ -4,6 +4,8 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,14 +27,14 @@ public class SeatController {
     private SeatRepository seatRepository;
 
     @GetMapping( "/seat/" )
-    public List<Seat> findAllTickets() {
+    public ResponseEntity<List<Seat>> findAllTickets() {
 
-        return seatRepository.findAll();
+        return new ResponseEntity<>( seatRepository.findAll(), HttpStatus.OK);
 
     }
 
     @GetMapping( "/seat/{id}" )
-    public Seat findTicketById( @PathVariable String id ) {
+    public Seat findTicketById( @PathVariable long id ) {
 
         Seat seat = seatRepository.findById(id)
                         .orElseThrow(() -> new ResourceNotFoundException(

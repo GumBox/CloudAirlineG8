@@ -34,13 +34,12 @@ public class TicketController {
     @GetMapping( value = "/ticket" )
     public ResponseEntity<List<Ticket>> findAllTickets() {
 
-        System.out.println("getmapping");
-        return new ResponseEntity<>(ticketRepository.findAll(), HttpStatus.OK);
+        return new ResponseEntity<List<Ticket>>(ticketRepository.findAll(), HttpStatus.OK);
 
     }
 
     @GetMapping( "/ticket/{id}" )
-    public ResponseEntity<Ticket> findTicketById( @PathVariable String id ) {
+    public ResponseEntity<Ticket> findTicketById( @PathVariable long id ) {
 
         Optional<Ticket> ticket = ticketRepository.findById(id);
 
@@ -66,7 +65,7 @@ public class TicketController {
     }
 
     @PutMapping( "/ticket/{id}" )
-    public ResponseEntity<Ticket> updateTicket( @PathVariable String id,
+    public ResponseEntity<Ticket> updateTicket( @PathVariable long id,
                     @Validated @RequestBody Ticket ticket ) {
 
         Optional<Ticket> findTicket = ticketRepository.findById(id);
