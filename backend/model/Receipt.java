@@ -45,6 +45,14 @@ public class Receipt implements Serializable {
 
     }
 
+    public Receipt(Date receiptBuyingDate, long totalPrice) {
+
+        super();
+        this.receiptBuyingDate = receiptBuyingDate;
+        this.totalPrice = totalPrice;
+
+    }
+
     public Date getReceiptBuyingDate() { return receiptBuyingDate; }
 
     public void setReceiptBuyingDate( Date receiptBuyingDate ) {

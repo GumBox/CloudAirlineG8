@@ -6,11 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,32 +34,40 @@ public class ReceiptController {
 
         Optional<Receipt> receipt = receiptRepository.findById(id);
 
-        if (receipt.isPresent()) {
-            return new ResponseEntity<>(receipt.get(), HttpStatus.OK);
-        }
+        if (receipt.isPresent()) { return new ResponseEntity<>(receipt.get(), HttpStatus.OK); }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
 
-    @PutMapping( "/receipt/{id}" )
-    public ResponseEntity<Receipt> updateReceipt( @PathVariable long id,
-                    @Validated @RequestBody Receipt receipt ) {
+    // @PutMapping( "/receipt/{id}" )
+    // public ResponseEntity<Receipt> updateReceipt( @PathVariable long id,
+    // @Validated @RequestBody Receipt receipt ) {
+    //
+    // Optional<Receipt> findReceipt = receiptRepository.findById(id);
+    //
+    // if (findReceipt.isPresent()) {
+    // Receipt updateReceipt = findReceipt.get();
+    // updateReceipt.setReceiptBuyingDate(receipt.getReceiptBuyingDate());
+    // updateReceipt.setLstTicket(receipt.getLstTicket());
+    //
+    // return new ResponseEntity<>(receiptRepository.save(updateReceipt),
+    // HttpStatus.OK);
+    // }
+    //
+    // System.out.println("PutMapping update Receipt ID: " + id);
+    //
+    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    //
+    // }
 
-        Optional<Receipt> findReceipt = receiptRepository.findById(id);
+    @PostMapping( "/receipt" )
+    public ResponseEntity<Receipt> createReceipt( Receipt receipt ) {
 
-        if (findReceipt.isPresent()) {
-            Receipt updateReceipt = findReceipt.get();
-            updateReceipt.setReceiptBuyingDate(receipt.getReceiptBuyingDate());
-            updateReceipt.setLstTicket(receipt.getLstTicket());
+        Receipt createReceipt = receiptRepository.save(
+                        new Receipt(receipt.getReceiptBuyingDate(), receipt.getTotalPrice()));
 
-            return new ResponseEntity<>(receiptRepository.save(updateReceipt),
-                            HttpStatus.OK);
-        }
-
-        System.out.println("PutMapping update Receipt ID: " + id);
-
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(createReceipt, HttpStatus.CREATED);
 
     }
 

@@ -39,6 +39,14 @@ public class Seat implements Serializable {
 
     }
 
+    public Seat(int seatNumber, String seatClass) {
+
+        super();
+        this.seatNumber = seatNumber;
+        this.seatClass = seatClass;
+
+    }
+
     public int getSeatNumber() { return seatNumber; }
 
     public void setSeatNumber( int seatNumber ) { this.seatNumber = seatNumber; }
