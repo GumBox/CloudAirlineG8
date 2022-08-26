@@ -73,7 +73,7 @@ export default function Home() {
             return (
 
                 <option >
-                    {item.placeTo.place}
+                    {item.place}
                 </option>
             )
         })
