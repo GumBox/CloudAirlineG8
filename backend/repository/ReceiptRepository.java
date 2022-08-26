@@ -7,5 +7,5 @@ import com.example.demo.model.Receipt;
 
 @Repository
 public interface ReceiptRepository extends JpaRepository<Receipt, Long> {
-
+    
 }

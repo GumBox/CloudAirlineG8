@@ -1,6 +1,7 @@
 
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +35,9 @@ public class TicketController {
     @GetMapping( value = "/ticket" )
     public ResponseEntity<List<Ticket>> findAllTickets() {
 
-        return new ResponseEntity<List<Ticket>>(ticketRepository.findAll(), HttpStatus.OK);
+        List<Ticket> list = new ArrayList<>();
+        list = ticketRepository.getAllTicket();
+        return new ResponseEntity<List<Ticket>>(list, HttpStatus.OK);
 
     }
 
@@ -43,9 +46,7 @@ public class TicketController {
 
         Optional<Ticket> ticket = ticketRepository.findById(id);
 
-        if (ticket.isPresent()) {
-            return new ResponseEntity<>(ticket.get(), HttpStatus.OK);
-        }
+        if (ticket.isPresent()) { return new ResponseEntity<>(ticket.get(), HttpStatus.OK); }
         System.out.println("Get Mapping ID: " + id);
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

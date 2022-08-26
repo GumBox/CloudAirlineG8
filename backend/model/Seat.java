@@ -6,7 +6,6 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +29,7 @@ public class Seat implements Serializable {
     @Column( name = "seat_class" )
     private String seatClass;
 
-    @OneToOne( mappedBy = "seat", cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+    @OneToOne( mappedBy = "seat", cascade = CascadeType.ALL)
     private Ticket ticket;
 
     public Seat() {
