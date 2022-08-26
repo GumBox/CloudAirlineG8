@@ -36,7 +36,7 @@ public class TicketController {
     public ResponseEntity<List<Ticket>> findAllTickets() {
 
         List<Ticket> list = new ArrayList<>();
-        list = ticketRepository.getAllTicket();
+        list = ticketRepository.findAll();
         return new ResponseEntity<List<Ticket>>(list, HttpStatus.OK);
 
     }
