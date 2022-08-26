@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// import { useEffect, useState } from 'react';
 
 
 
 function Seat() {
+
+    // const [seat, setSeat] = useState(null)
+    // useEffect(() => {
+    //     fetch('http://localhost:8080/mainseat/seat/')
+    //         .then
+
+
+    // })
+
 
 
     return (
@@ -47,6 +57,62 @@ function Seat() {
                 </div>
             </div>
 
+
+
+
+
+            <div className="container">
+                Đầu máy bay
+            </div>
+
+
+            <div className="container my-5">
+                <div className="card">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="row">
+                                <p className="col-md-4">
+                                    <button>
+                                        <i class="fa-solid fa-couch"></i>
+                                    </button>
+                                </p>
+                                <p className="col-md-4">
+                                    <button>
+                                        <i class="fa-solid fa-couch"></i>
+                                    </button>
+                                </p>
+                                <p className="col-md-4">
+                                    <button>
+                                        <i class="fa-solid fa-couch"></i>
+                                    </button>
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <div className="col-md-6">
+                            <div className="row">
+                                <p className="col-md-4">
+                                    <button>
+                                        <i class="fa-solid fa-couch"></i>
+                                    </button>
+                                </p>
+                                <p className="col-md-4">
+                                    <button>
+                                        <i class="fa-solid fa-couch"></i>
+                                    </button>
+                                </p>
+                                <p className="col-md-4">
+                                    <button><i class="fa-solid fa-couch"></i>
+                                    </button>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
 
     )

@@ -41,7 +41,7 @@ export default function Home() {
 
     useEffect(() => {
 
-        fetch('http://localhost:8080/mainticket/ticket')
+        fetch('http://localhost:8080/mainplace/place')
             .then((response) => response.json())
             .then((response) => {
                 setPlaceName(response)
@@ -54,11 +54,13 @@ export default function Home() {
     if (placeName != null) {
 
         placesFrom = placeName.map((item) => {
-            return (
 
-                <option value={item.placeTo.place}>
-                    {item.placeFrom.place}
+
+            return (
+                <option>
+                    {item.place}
                 </option>
+
             )
 
         })
