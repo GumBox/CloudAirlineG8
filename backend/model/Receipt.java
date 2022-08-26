@@ -7,7 +7,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,13 +35,21 @@ public class Receipt implements Serializable {
     @JoinColumn( name = "user_id" )
     private Users users;
 
-    @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    @OneToMany( cascade = CascadeType.ALL )
     @JsonIgnore
     private List<Ticket> lstTicket;
 
     public Receipt() {
 
         super();
+
+    }
+
+    public Receipt(Date receiptBuyingDate, long totalPrice) {
+
+        super();
+        this.receiptBuyingDate = receiptBuyingDate;
+        this.totalPrice = totalPrice;
 
     }
 

@@ -1,6 +1,7 @@
 
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,19 +35,18 @@ public class TicketController {
     @GetMapping( value = "/ticket" )
     public ResponseEntity<List<Ticket>> findAllTickets() {
 
-        System.out.println("getmapping");
-        return new ResponseEntity<>(ticketRepository.findAll(), HttpStatus.OK);
+        List<Ticket> list = new ArrayList<>();
+        list = ticketRepository.findAll();
+        return new ResponseEntity<List<Ticket>>(list, HttpStatus.OK);
 
     }
 
     @GetMapping( "/ticket/{id}" )
-    public ResponseEntity<Ticket> findTicketById( @PathVariable String id ) {
+    public ResponseEntity<Ticket> findTicketById( @PathVariable long id ) {
 
         Optional<Ticket> ticket = ticketRepository.findById(id);
 
-        if (ticket.isPresent()) {
-            return new ResponseEntity<>(ticket.get(), HttpStatus.OK);
-        }
+        if (ticket.isPresent()) { return new ResponseEntity<>(ticket.get(), HttpStatus.OK); }
         System.out.println("Get Mapping ID: " + id);
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -66,7 +66,7 @@ public class TicketController {
     }
 
     @PutMapping( "/ticket/{id}" )
-    public ResponseEntity<Ticket> updateTicket( @PathVariable String id,
+    public ResponseEntity<Ticket> updateTicket( @PathVariable long id,
                     @Validated @RequestBody Ticket ticket ) {
 
         Optional<Ticket> findTicket = ticketRepository.findById(id);

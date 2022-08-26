@@ -1,3 +1,4 @@
+
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, id_place_from, id_place_to,  customer_id, receipt_id) values  (1, '2022-09-15', 387146,1 ,'VN196','BMV','CAH', 1, 1);
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, id_place_from, id_place_to,  customer_id, receipt_id) values  (2, '2025-02-15', 330090,2 ,'VN243','CAH','DIN', 2, 2);
 insert into ticket (ticket_id, flight_date, ticket_price, seat_id, flight_id, id_place_from, id_place_to,  customer_id, receipt_id) values  (3, '2024-10-29', 728658,3 ,'VN247','DIN','DLI', 3, 3);

@@ -1,9 +1,14 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,18 +19,20 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table( name = "ticket" )
-public class Ticket {
+public class Ticket implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "ticket_id" )
-    private String ticketID;
+    private long ticketID;
 
     @Column( name = "ticket_price" )
     private String ticketPrice;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JsonIgnore
-    @JoinColumn( name = "seat_id" )
+    @JoinColumn( name = "seat_id", nullable=false, insertable=false, updatable=false )
     private Seat seat;
 
     @Column( name = "flight_date" )
@@ -104,6 +111,6 @@ public class Ticket {
 
     public void setReceipt( Receipt receipt ) { this.receipt = receipt; }
 
-    public String getTicketID() { return ticketID; }
+    public long getTicketID() { return ticketID; }
 
 }

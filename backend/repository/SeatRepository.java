@@ -14,7 +14,7 @@ import com.example.demo.model.Seat;
  *
  * @author Blue Maxx
  */
-public interface SeatRepository extends JpaRepository<Seat, String> {
+public interface SeatRepository extends JpaRepository<Seat, Long> {
 
 }
 
