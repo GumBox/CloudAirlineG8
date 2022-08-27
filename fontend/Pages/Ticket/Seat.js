@@ -1,9 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
 
 
 
 function Seat() {
+
+    const [seat, setSeat] = useState(null)
+    useEffect(() => {
+        fetch('http://localhost:8080/mainseat/seat/')
+            .then((res) => res.json())
+            .then((res) => {
+                setSeat(res)
+                console.log(res)
+            });
+    }, [])
+
+    var seates = []
+    if (seat != null) {
+
+        seates = seat.map((item) => {
+
+
+            return (
+                <p className="col-md-4">
+                    <Link to="/home1">
+                        <button className="btn btn-secondary">
+                            <i class="fa-solid fa-couch">{item.seatID}</i>
+                        </button>
+                    </Link>
+                </p>
+
+
+            )
+
+        })
+    }
+
 
 
     return (
@@ -47,6 +80,29 @@ function Seat() {
                 </div>
             </div>
 
+
+
+
+
+            <div className="container">
+                Đầu máy bay
+            </div>
+
+
+            <div className="container my-5">
+                <div className="card">
+                    <div className="row">
+
+                        <div className="col-md-12 text-center">
+                            <div className="row">
+                                {seates}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
 
     )
