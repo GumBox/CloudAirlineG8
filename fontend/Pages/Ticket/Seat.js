@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import "../../Css/Seat.css";
 
 
 
@@ -25,8 +26,8 @@ function Seat() {
             return (
                 <p className="col-md-4">
                     <Link to="/home1">
-                        <button className="btn btn-secondary">
-                            <i class="fa-solid fa-couch">{item.seatID}</i>
+                        <button className="btn btn-secondary seat-item p-3">
+                            <i class="fa-solid fa-couch"> {item.seatID}</i>
                         </button>
                     </Link>
                 </p>
@@ -84,14 +85,12 @@ function Seat() {
 
 
 
-            <div className="container">
-                Đầu máy bay
-            </div>
+
 
 
             <div className="container my-5">
                 <div className="card">
-                    <div className="row">
+                    <div className="row my-5">
 
                         <div className="col-md-12 text-center">
                             <div className="row">

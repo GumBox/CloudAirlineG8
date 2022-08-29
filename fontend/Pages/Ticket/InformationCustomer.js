@@ -15,6 +15,7 @@ function InfomationCustomer() {
     const [user, setUser] = useState(null);
     let navigate = useNavigate();
     const {
+        formState: { errors },
         register,
         handleSubmit,
         watch,
@@ -171,16 +172,25 @@ function InfomationCustomer() {
                                     <div class="form-floating col-sm-12 col-md-5">
                                         <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Tên Đệm và Tên"
                                             {...register('lastName', { required: true })} onChange={(e) => handleChange(e)} />
+                                        <p className="errors">
+                                            {errors.lastName?.type === 'required' && "Tên và họ đệm không được để trống"}
+                                        </p>
                                         <label className="ms-2" for="lastName" style={{ opacity: .75 }}>Tên Đệm và Tên *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-5">
                                         <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Họ"
                                             {...register('firstName', { required: true })} onChange={(e) => handleChange(e)} />
+                                        <p className="errors">
+                                            {errors.firstName?.type === 'required' && "Họ không được để trống"}
+                                        </p>
                                         <label className="ms-2" for="firstName" style={{ opacity: .75 }}>Họ *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6">
                                         <input type="date" class="form-control" id="dob" name="dob" placeholder="dob"
                                             {...register('dob', { required: true })} onChange={(e) => handleChange(e)} />
+                                        <p className="errors">
+                                            {errors.dob?.type === 'required' && "Ngày sinh không được để trống"}
+                                        </p>
                                         <label className="ms-2" for="dob" style={{ opacity: .75 }}>Ngày Tháng Năm sinh *</label>
                                     </div>
                                     <div class="form-check col-sm-12 col-md-6">
@@ -215,6 +225,10 @@ function InfomationCustomer() {
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
                                         <input type="text" class="form-control" id="numberPhone" name="numberPhone" placeholder="Sos điện thoại "
                                             {...register('numberPhone', { required: true, maxLength: 10, minLength: 10 })} onChange={(e) => handleChange(e)} />
+                                        <p className="errors">
+
+                                            {errors.numberPhone?.type === 'required' && "Vui lòng để lại số điện thoại"}
+                                        </p>
                                         <label className="ms-2" for="numberPhone" style={{ opacity: .75 }}>Số điện thoại *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
@@ -224,6 +238,9 @@ function InfomationCustomer() {
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">
                                         <input type="email" class="form-control" id="email" name="email" placeholder="Email "
                                             {...register('email', { required: true })} onChange={(e) => handleChange(e)} />
+                                        <p className="errors">
+                                            {errors.email?.type === 'required' && "Vui lòng để lại email"}
+                                        </p>
                                         <label className="ms-2" for="email" style={{ opacity: .75 }}>Email *</label>
                                     </div>
                                     <div class="form-floating col-sm-12 col-md-6 mb-3">

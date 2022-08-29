@@ -152,7 +152,7 @@ function Ticket() {
         <>
 
             {/* HEADER & CAROUSEL */}
-            <div className="tab-header">
+            <div className="bg-warning">
 
                 <div className="container">
                     <ul class="nav nav-pills nav-justified ">
@@ -214,9 +214,7 @@ function Ticket() {
                     <p className="h4 my-4 title-header-flight">
                         Chuyến bay chiều đi
                     </p>
-                    <div>
-                        {flightDates}
-                    </div>
+
                     {/* END */}
 
                     {/* TICKET */}

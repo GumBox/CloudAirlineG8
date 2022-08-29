@@ -43,12 +43,12 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="nav-link header-link">
+                                <Link to="customer_care" className="nav-link header-link">
                                     Dịch vụ
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="nav-link header-link">
+                                <Link to="company" className="nav-link header-link">
                                     Giới thiệu
                                 </Link>
                             </li>
