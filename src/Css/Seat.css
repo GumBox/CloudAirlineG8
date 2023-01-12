@@ -1,0 +1,9 @@
+.seat-item:hover {
+    color: red !important;
+    background-color: unset !important;
+}
+
+.seat-item:active {
+    color: green !important;
+    background-color: unset !important;
+}
